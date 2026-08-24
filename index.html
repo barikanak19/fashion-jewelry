@@ -1,0 +1,3299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="NIVA - Affordable rose gold everyday jewelry by Saba">
+<title>NIVA | Rose Gold Jewelry</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --dark:#211c19;
+    --rose:#c98279;
+    --rose-dark:#a96259;
+    --gold:#b78950;
+    --light:#fbf6f2;
+    --pink:#f1d9d3;
+    --border:#e8dcd5;
+    --muted:#756c66;
+    --white:#fff;
+    --green:#3d8654;
+    --shadow:0 18px 45px rgba(40,30,20,.10);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+html{
+    scroll-padding-top:90px;
+}
+
+body{
+    font-family:"DM Sans",sans-serif;
+    background:var(--light);
+    color:var(--dark);
+    overflow-x:hidden;
+}
+
+button,input,textarea,select{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+::selection{
+    background:var(--rose);
+    color:white;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar{
+    background:var(--dark);
+    color:white;
+    text-align:center;
+    padding:9px 15px;
+    font-size:11px;
+    letter-spacing:1.5px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(251,246,242,.96);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid var(--border);
+}
+
+.navbar{
+    max-width:1200px;
+    height:76px;
+    margin:auto;
+    padding:0 22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:relative;
+}
+
+.logo{
+    font-family:"Playfair Display",serif;
+    font-size:32px;
+    font-weight:700;
+    letter-spacing:3px;
+}
+
+.logo span{
+    color:var(--rose);
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+.nav-links a{
+    font-weight:600;
+    font-size:14px;
+    transition:.25s;
+}
+
+.nav-links a:hover{
+    color:var(--rose);
+}
+
+.nav-actions{
+    display:flex;
+    align-items:center;
+    gap:4px;
+}
+
+.icon-btn{
+    width:42px;
+    height:42px;
+    border:0;
+    background:transparent;
+    border-radius:50%;
+    font-size:19px;
+    position:relative;
+    transition:.25s;
+}
+
+.icon-btn:hover{
+    background:#eee1dc;
+    transform:translateY(-1px);
+}
+
+.badge span{
+    position:absolute;
+    right:-1px;
+    top:-1px;
+    min-width:19px;
+    height:19px;
+    padding:0 4px;
+    background:var(--rose);
+    color:white;
+    border:2px solid var(--light);
+    border-radius:50%;
+    font-size:10px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.menu-btn{
+    display:none;
+}
+
+/* AUTH BUTTON */
+
+.auth-btn{
+    border:1px solid var(--dark);
+    background:transparent;
+    padding:9px 15px;
+    border-radius:4px;
+    font-weight:600;
+    transition:.25s;
+}
+
+.auth-btn:hover{
+    background:var(--dark);
+    color:white;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:620px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    background:
+        radial-gradient(circle at 80% 20%,#edcfc8 0,transparent 30%),
+        linear-gradient(120deg,#fcf8f5,#f0ded8);
+    overflow:hidden;
+}
+
+.hero-content{
+    padding:70px 8vw;
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    position:relative;
+    z-index:2;
+}
+
+.eyebrow{
+    color:var(--rose);
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:16px;
+}
+
+.hero h1{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(45px,5vw,72px);
+    line-height:1.05;
+    margin-bottom:22px;
+    letter-spacing:-1px;
+}
+
+.hero h1 span{
+    color:var(--rose);
+}
+
+.hero p{
+    max-width:520px;
+    color:var(--muted);
+    line-height:1.8;
+    margin-bottom:28px;
+}
+
+.buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    border:0;
+    padding:14px 23px;
+    font-weight:700;
+    border-radius:4px;
+    transition:.25s;
+}
+
+.btn:active{
+    transform:scale(.97);
+}
+
+.primary{
+    background:var(--dark);
+    color:white;
+}
+
+.primary:hover{
+    background:var(--rose);
+    transform:translateY(-2px);
+}
+
+.outline{
+    background:transparent;
+    border:1px solid var(--dark);
+}
+
+.outline:hover{
+    background:var(--dark);
+    color:white;
+}
+
+.hero-image{
+    min-height:620px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+.hero-circle{
+    width:450px;
+    height:450px;
+    border-radius:50%;
+    overflow:hidden;
+    background:linear-gradient(135deg,#f7e7e1,#dfb3a9);
+    box-shadow:0 30px 80px rgba(70,40,30,.2);
+    border:8px solid rgba(255,255,255,.55);
+}
+
+.hero-circle img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.hero-label{
+    position:absolute;
+    bottom:70px;
+    left:8%;
+    background:white;
+    padding:15px 20px;
+    box-shadow:var(--shadow);
+    border-radius:6px;
+}
+
+.hero-label strong{
+    display:block;
+    margin-bottom:3px;
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    background:white;
+    border-bottom:1px solid var(--border);
+}
+
+.feature{
+    text-align:center;
+    padding:26px 15px;
+    border-right:1px solid var(--border);
+}
+
+.feature:last-child{
+    border:0;
+}
+
+.feature-icon{
+    font-size:24px;
+    margin-bottom:7px;
+}
+
+.feature strong{
+    display:block;
+    margin-bottom:4px;
+}
+
+.feature p{
+    font-size:12px;
+    color:var(--muted);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section{
+    max-width:1200px;
+    margin:auto;
+    padding:85px 22px;
+}
+
+.heading{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.heading h2{
+    font-family:"Playfair Display",serif;
+    font-size:42px;
+    margin-bottom:8px;
+    letter-spacing:-.5px;
+}
+
+.heading p{
+    color:var(--muted);
+}
+
+/* =========================
+   SHOP TOOLS
+========================= */
+
+.shop-tools{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+.search{
+    width:290px;
+    height:44px;
+    display:flex;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:5px;
+    overflow:hidden;
+    box-shadow:0 4px 15px rgba(50,30,20,.04);
+}
+
+.search input{
+    width:100%;
+    border:0;
+    outline:0;
+    padding:10px 14px;
+    background:transparent;
+}
+
+.search button{
+    border:0;
+    background:transparent;
+    padding:0 14px;
+}
+
+.filters{
+    display:flex;
+    gap:7px;
+    flex-wrap:wrap;
+}
+
+.filter{
+    border:1px solid var(--border);
+    background:white;
+    padding:9px 15px;
+    border-radius:20px;
+    transition:.25s;
+}
+
+.filter.active,
+.filter:hover{
+    background:var(--dark);
+    color:white;
+    box-shadow:0 7px 18px rgba(33,28,25,.12);
+}
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:10px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 22px 50px rgba(40,30,20,.14);
+}
+
+.product-image{
+    height:320px;
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 50% 35%,#fff,#f7e7e1 65%,#efd5ce);
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    display:block;
+    transition:.5s ease;
+    cursor:pointer;
+}
+
+.card:hover .product-image img{
+    transform:scale(1.06);
+}
+
+.heart{
+    position:absolute;
+    right:12px;
+    top:12px;
+    z-index:5;
+    width:40px;
+    height:40px;
+    border:0;
+    border-radius:50%;
+    background:rgba(255,255,255,.96);
+    font-size:19px;
+    box-shadow:0 5px 15px rgba(0,0,0,.12);
+    transition:.25s;
+}
+
+.heart:hover{
+    transform:scale(1.08);
+}
+
+.heart.active{
+    color:#d45568;
+}
+
+.product-info{
+    padding:19px;
+}
+
+.category{
+    font-size:10px;
+    font-weight:700;
+    color:var(--rose);
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+}
+
+.product-info h3{
+    font-family:"Playfair Display",serif;
+    font-size:21px;
+    margin:7px 0;
+}
+
+.stars{
+    color:#c7964c;
+    font-size:13px;
+}
+
+.price{
+    font-size:17px;
+    font-weight:700;
+    margin-top:8px;
+}
+
+.old{
+    color:#aaa;
+    font-size:12px;
+    text-decoration:line-through;
+    margin-left:5px;
+}
+
+.cart-btn{
+    width:100%;
+    border:0;
+    background:var(--dark);
+    color:white;
+    padding:12px;
+    margin-top:14px;
+    font-weight:700;
+    border-radius:4px;
+    transition:.25s;
+}
+
+.cart-btn:hover{
+    background:var(--rose);
+    transform:translateY(-1px);
+}
+
+/* =========================
+   PROMO
+========================= */
+
+.promo{
+    max-width:1160px;
+    margin:0 auto 80px;
+    padding:50px;
+    background:var(--dark);
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    border-radius:10px;
+    position:relative;
+    overflow:hidden;
+}
+
+.promo::after{
+    content:"";
+    position:absolute;
+    width:260px;
+    height:260px;
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:50%;
+    right:-70px;
+    top:-80px;
+}
+
+.promo > *{
+    position:relative;
+    z-index:2;
+}
+
+.promo h2{
+    font-family:"Playfair Display",serif;
+    font-size:38px;
+}
+
+.promo p{
+    color:#bbb;
+    margin-top:8px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    background:white;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.about-image{
+    height:430px;
+    overflow:hidden;
+    background:#f0d8d2;
+    border-radius:8px;
+}
+
+.about-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.about-content h2{
+    font-family:"Playfair Display",serif;
+    font-size:43px;
+    margin-bottom:18px;
+}
+
+.about-content p{
+    color:var(--muted);
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+.stats{
+    display:flex;
+    gap:35px;
+    margin-top:27px;
+    flex-wrap:wrap;
+}
+
+.stat strong{
+    font-family:"Playfair Display",serif;
+    font-size:27px;
+    display:block;
+}
+
+/* =========================
+   REVIEWS
+========================= */
+
+.reviews{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.review{
+    background:white;
+    border:1px solid var(--border);
+    padding:27px;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.review:hover{
+    transform:translateY(-4px);
+    box-shadow:0 15px 35px rgba(40,30,20,.08);
+}
+
+.review p{
+    color:var(--muted);
+    line-height:1.8;
+    margin:14px 0;
+}
+
+/* =========================
+   NEWSLETTER
+========================= */
+
+.newsletter{
+    background:#eeded8;
+    padding:75px 20px;
+    text-align:center;
+}
+
+.newsletter h2{
+    font-family:"Playfair Display",serif;
+    font-size:40px;
+}
+
+.newsletter p{
+    color:var(--muted);
+    margin:10px 0 24px;
+}
+
+.newsletter-form{
+    max-width:490px;
+    margin:auto;
+    display:flex;
+    box-shadow:0 10px 30px rgba(50,30,20,.08);
+}
+
+.newsletter-form input{
+    flex:1;
+    border:1px solid var(--border);
+    padding:14px;
+    outline:0;
+}
+
+.newsletter-form button{
+    border:0;
+    background:var(--dark);
+    color:white;
+    padding:14px 23px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#191613;
+    color:white;
+    padding:55px 22px 22px;
+}
+
+.footer-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1.5fr;
+    gap:40px;
+}
+
+.footer-logo{
+    font-family:"Playfair Display",serif;
+    font-size:28px;
+}
+
+.footer-logo span{
+    color:var(--rose);
+}
+
+.footer-col h4{
+    margin-bottom:15px;
+}
+
+.footer-col a{
+    display:block;
+    color:#aaa;
+    margin-bottom:9px;
+    font-size:14px;
+}
+
+.footer-col a:hover{
+    color:var(--rose);
+}
+
+.footer-col p{
+    color:#aaa;
+    line-height:1.7;
+    font-size:14px;
+}
+
+.copyright{
+    max-width:1200px;
+    margin:35px auto 0;
+    padding-top:18px;
+    border-top:1px solid #393632;
+    color:#777;
+    font-size:12px;
+}
+
+/* =========================
+   MODALS
+========================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    z-index:3000;
+    background:rgba(0,0,0,.55);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    width:min(600px,100%);
+    max-height:90vh;
+    overflow:auto;
+    background:white;
+    padding:30px;
+    position:relative;
+    border-radius:12px;
+    box-shadow:0 30px 80px rgba(0,0,0,.25);
+}
+
+.close{
+    position:absolute;
+    right:14px;
+    top:10px;
+    width:40px;
+    height:40px;
+    border:0;
+    background:transparent;
+    border-radius:50%;
+    font-size:28px;
+    transition:.2s;
+}
+
+.close:hover{
+    background:#f4e7e2;
+    color:var(--rose);
+}
+
+.modal-box h2{
+    font-family:"Playfair Display",serif;
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+/* =========================
+   AUTH
+========================= */
+
+.auth-box{
+    width:min(430px,100%);
+}
+
+.auth-title{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.auth-title h2{
+    margin-bottom:7px;
+}
+
+.auth-title p{
+    color:var(--muted);
+    font-size:13px;
+}
+
+.auth-form{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+}
+
+.form-group{
+    margin-bottom:15px;
+    width:100%;
+}
+
+.form-group label{
+    display:block;
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:6px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+    width:100%;
+    padding:12px;
+    border:1px solid var(--border);
+    outline:0;
+    background:#fff;
+    border-radius:4px;
+    transition:.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{
+    border-color:var(--rose);
+    box-shadow:0 0 0 3px rgba(201,130,121,.1);
+}
+
+.error{
+    color:#c44;
+    font-size:12px;
+    margin-top:5px;
+    display:none;
+}
+
+.success{
+    color:var(--green);
+    font-size:13px;
+    margin-top:10px;
+    text-align:center;
+}
+
+/* =========================
+   CART
+========================= */
+
+.cart-item{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    border-bottom:1px solid var(--border);
+    padding:14px 0;
+}
+
+.cart-img{
+    width:65px;
+    height:65px;
+    object-fit:cover;
+    border-radius:5px;
+    background:#f7e7e1;
+}
+
+.cart-details{
+    flex:1;
+}
+
+.quantity{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-top:6px;
+}
+
+.quantity button{
+    width:27px;
+    height:27px;
+    border:1px solid var(--border);
+    background:white;
+    border-radius:3px;
+}
+
+.remove{
+    border:0;
+    background:none;
+    color:#c44;
+    font-size:12px;
+}
+
+.total{
+    display:flex;
+    justify-content:space-between;
+    font-size:20px;
+    font-weight:700;
+    padding:20px 0;
+}
+
+/* =========================
+   TOAST
+========================= */
+
+.toast{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    z-index:5000;
+    background:var(--dark);
+    color:white;
+    padding:14px 20px;
+    border-radius:8px;
+    transform:translateY(100px);
+    opacity:0;
+    transition:.3s;
+    box-shadow:0 15px 40px rgba(0,0,0,.2);
+}
+
+.toast.show{
+    transform:translateY(0);
+    opacity:1;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .nav-links.mobile-open{
+        display:flex;
+        position:absolute;
+        top:76px;
+        left:0;
+        right:0;
+        background:rgba(251,246,242,.99);
+        padding:22px;
+        flex-direction:column;
+        gap:18px;
+        border-bottom:1px solid var(--border);
+        box-shadow:0 15px 30px rgba(30,20,15,.08);
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+    }
+
+    .hero-image{
+        min-height:450px;
+    }
+
+    .features{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .reviews{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:550px){
+
+    .topbar{
+        font-size:9px;
+        letter-spacing:1px;
+    }
+
+    .navbar{
+        padding:0 12px;
+    }
+
+    .logo{
+        font-size:27px;
+    }
+
+    .auth-btn{
+        padding:7px 9px;
+        font-size:11px;
+    }
+
+    .hero-content{
+        padding:55px 22px;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero-circle{
+        width:310px;
+        height:310px;
+    }
+
+    .hero-image{
+        min-height:370px;
+    }
+
+    .hero-label{
+        left:20px;
+        bottom:35px;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .feature{
+        border-right:0;
+        border-bottom:1px solid var(--border);
+    }
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .product-image{
+        height:350px;
+    }
+
+    .promo{
+        margin:0 15px 60px;
+        padding:35px 25px;
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .promo h2{
+        font-size:31px;
+    }
+
+    .heading h2{
+        font-size:34px;
+    }
+
+    .about-content h2{
+        font-size:36px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .newsletter-form{
+        flex-direction:column;
+        gap:7px;
+        box-shadow:none;
+    }
+
+    .modal{
+        padding:12px;
+    }
+
+    .modal-box{
+        padding:22px;
+    }
+
+    .cart-item{
+        gap:9px;
+    }
+
+    .cart-img{
+        width:55px;
+        height:55px;
+    }
+
+    .toast{
+        left:15px;
+        right:15px;
+        bottom:15px;
+        text-align:center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     TOP BAR
+========================= -->
+
+<div class="topbar">
+    ✨ EVERYTHING UNDER ₹200 • FREE SHIPPING ABOVE ₹499 • BY SABA
+</div>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+<nav class="navbar">
+
+<a href="#home" class="logo">NIVA<span>.</span></a>
+
+<ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#shop">Shop</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+</ul>
+
+<div class="nav-actions">
+
+<button class="auth-btn" onclick="openLogin()">
+    Login / Sign Up
+</button>
+
+<button class="icon-btn" onclick="openWishlist()" aria-label="Wishlist">
+    ♡
+</button>
+
+<button class="icon-btn badge" onclick="openCart()" aria-label="Shopping cart">
+    🛒
+    <span id="cartCount">0</span>
+</button>
+
+<button class="icon-btn menu-btn" onclick="mobileMenu()" aria-label="Menu">
+    ☰
+</button>
+
+</div>
+</nav>
+</header>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<div class="eyebrow">
+    Everyday Jewelry • By Saba
+</div>
+
+<h1>
+    Little pieces,<br>
+    <span>big sparkle.</span>
+</h1>
+
+<p>
+    Discover affordable rose-gold and gold jewelry designed
+    for college, work and everyday moments. Beautiful pieces
+    starting from just ₹99.
+</p>
+
+<div class="buttons">
+
+<button class="btn primary" onclick="goShop()">
+    Shop Under ₹200 →
+</button>
+
+<button class="btn outline" onclick="goAbout()">
+    Meet Saba
+</button>
+
+</div>
+</div>
+
+<div class="hero-image">
+
+<div class="hero-circle">
+
+<img
+src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=85"
+alt="Rose gold jewelry"
+onerror="imageFallback(this)"
+>
+
+</div>
+
+<div class="hero-label">
+    <strong>Starting at ₹99</strong>
+    <small>Rose-gold everyday sparkle</small>
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+     FEATURES
+========================= -->
+
+<section class="features">
+
+<div class="feature">
+    <div class="feature-icon">✨</div>
+    <strong>Anti-Tarnish</strong>
+    <p>Long-lasting shine</p>
+</div>
+
+<div class="feature">
+    <div class="feature-icon">💧</div>
+    <strong>Water Resistant</strong>
+    <p>Made for everyday wear</p>
+</div>
+
+<div class="feature">
+    <div class="feature-icon">💗</div>
+    <strong>Skin Friendly</strong>
+    <p>Comfortable designs</p>
+</div>
+
+<div class="feature">
+    <div class="feature-icon">📦</div>
+    <strong>Fast Delivery</strong>
+    <p>Across India</p>
+</div>
+
+</section>
+
+<!-- =========================
+     SHOP
+========================= -->
+
+<section class="section" id="shop">
+
+<div class="heading">
+
+<div class="eyebrow">
+    NIVA COLLECTION
+</div>
+
+<h2>Pretty Jewelry, Tiny Prices</h2>
+
+<p>
+    Rose-gold inspired jewelry — every product is under ₹200.
+</p>
+
+</div>
+
+<div class="shop-tools">
+
+<div class="search">
+
+<input
+id="search"
+type="text"
+placeholder="Search jewelry..."
+oninput="searchProducts()"
+>
+
+<button type="button">⌕</button>
+
+</div>
+
+<div class="filters">
+
+<button class="filter active"
+onclick="filterProducts('all',this)">
+    All
+</button>
+
+<button class="filter"
+onclick="filterProducts('necklace',this)">
+    Necklaces
+</button>
+
+<button class="filter"
+onclick="filterProducts('earring',this)">
+    Earrings
+</button>
+
+<button class="filter"
+onclick="filterProducts('ring',this)">
+    Rings
+</button>
+
+<button class="filter"
+onclick="filterProducts('bracelet',this)">
+    Bracelets
+</button>
+
+</div>
+</div>
+
+<div class="products" id="products"></div>
+
+</section>
+
+<!-- =========================
+     PROMO
+========================= -->
+
+<section class="promo">
+
+<div>
+
+<h2>Shine More. Spend Less.</h2>
+
+<p>
+    Cute rose-gold jewelry doesn't need to be expensive.
+</p>
+
+</div>
+
+<button class="btn"
+style="background:#c98279;color:white"
+onclick="goShop()">
+    Shop Now →
+</button>
+
+</section>
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about" id="about">
+
+<div class="section">
+
+<div class="about-grid">
+
+<div class="about-image">
+
+<img
+src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=85"
+alt="Gold jewelry"
+onerror="imageFallback(this)"
+>
+
+</div>
+
+<div class="about-content">
+
+<div class="eyebrow">
+    MEET THE OWNER
+</div>
+
+<h2>Hi, I'm Saba.</h2>
+
+<p>
+    NIVA started with a simple idea — jewelry should be
+    stylish, affordable and easy to wear every day.
+</p>
+
+<p>
+    I created NIVA to bring cute, minimal and
+    rose-gold inspired jewelry to students and young
+    women without making them spend a lot.
+</p>
+
+<div class="stats">
+
+<div class="stat">
+    <strong>₹99</strong>
+    <span>Starting Price</span>
+</div>
+
+<div class="stat">
+    <strong>20+</strong>
+    <span>Designs</span>
+</div>
+
+<div class="stat">
+    <strong>6M</strong>
+    <span>Warranty</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- =========================
+     REVIEWS
+========================= -->
+
+<section class="section" id="reviews">
+
+<div class="heading">
+
+<div class="eyebrow">
+    CUSTOMER LOVE
+</div>
+
+<h2>What People Say</h2>
+
+</div>
+
+<div class="reviews">
+
+<div class="review">
+    <div class="stars">★★★★★</div>
+    <p>
+        "The earrings are so cute and the price is amazing.
+        Perfect for college!"
+    </p>
+    <strong>— Ananya</strong>
+</div>
+
+<div class="review">
+    <div class="stars">★★★★★</div>
+    <p>
+        "I ordered the necklace and it looks really pretty.
+        The packaging was also lovely."
+    </p>
+    <strong>— Priya</strong>
+</div>
+
+<div class="review">
+    <div class="stars">★★★★★</div>
+    <p>
+        "Affordable and stylish. NIVA is definitely my new
+        favorite jewelry store."
+    </p>
+    <strong>— Riya</strong>
+</div>
+
+</div>
+</section>
+
+<!-- =========================
+     NEWSLETTER
+========================= -->
+
+<section class="newsletter" id="contact">
+
+<div class="eyebrow">
+    STAY CONNECTED
+</div>
+
+<h2>Get 10% Off Your First Order</h2>
+
+<p>
+    Join NIVA for new arrivals and special offers.
+</p>
+
+<form class="newsletter-form" onsubmit="subscribe(event)">
+
+<input
+type="email"
+id="newsletterEmail"
+placeholder="Enter your email"
+required
+>
+
+<button type="submit">Subscribe</button>
+
+</form>
+
+</section>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+
+<div class="footer-logo">
+    NIVA<span>.</span>
+</div>
+
+<p style="margin-top:15px">
+    Affordable rose-gold everyday jewelry by Saba.
+</p>
+
+</div>
+
+<div class="footer-col">
+
+<h4>Shop</h4>
+
+<a href="#shop">All Jewelry</a>
+<a href="#shop">Necklaces</a>
+<a href="#shop">Earrings</a>
+<a href="#shop">Rings</a>
+
+</div>
+
+<div class="footer-col">
+
+<h4>Company</h4>
+
+<a href="#about">Our Story</a>
+<a href="#reviews">Reviews</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+<div class="footer-col">
+
+<h4>Owner</h4>
+
+<p>
+    Saba<br>
+    Founder, NIVA
+</p>
+
+<a href="mailto:saba@niva.com">
+    saba@niva.com
+</a>
+
+</div>
+
+</div>
+
+<div class="copyright">
+    © 2026 NIVA Jewelry • Founded by Saba • College Project
+</div>
+
+</footer>
+
+<!-- =========================
+     LOGIN / SIGNUP MODAL
+========================= -->
+
+<div class="modal" id="authModal">
+
+<div class="modal-box auth-box">
+
+<button class="close" onclick="closeModal('authModal')">
+    ×
+</button>
+
+<div class="auth-title">
+
+<div class="eyebrow">
+    NIVA ACCOUNT
+</div>
+
+<h2 id="authHeading">Login</h2>
+
+<p id="authSubheading">
+    Login with your registered email.
+</p>
+
+</div>
+
+<!-- LOGIN -->
+
+<form
+id="loginForm"
+class="auth-form"
+onsubmit="loginUser(event)"
+novalidate
+>
+
+<div class="form-group">
+
+<label>Email Address</label>
+
+<input
+id="loginEmail"
+type="email"
+placeholder="example@gmail.com"
+autocomplete="email"
+required
+>
+
+<div class="error" id="loginEmailError">
+    Please enter a valid email address.
+</div>
+
+</div>
+
+<div class="form-group">
+
+<label>Password</label>
+
+<input
+id="loginPassword"
+type="password"
+placeholder="Enter password"
+autocomplete="current-password"
+required
+>
+
+<div class="error" id="loginPasswordError">
+    Password must contain at least 8 characters.
+</div>
+
+</div>
+
+<button
+class="btn primary"
+style="width:100%"
+type="submit">
+    Login
+</button>
+
+<p style="text-align:center;margin-top:18px;font-size:13px">
+
+Don't have an account?
+
+<button
+type="button"
+style="border:0;background:none;color:#c98279;font-weight:700"
+onclick="showSignup()">
+    Sign Up
+</button>
+
+</p>
+
+<button
+type="button"
+class="btn outline"
+style="width:100%;margin-top:12px"
+onclick="continueAsGuest()">
+    Continue as Guest
+</button>
+
+</form>
+
+<!-- SIGNUP -->
+
+<form
+id="signupForm"
+class="auth-form"
+onsubmit="signupUser(event)"
+novalidate
+style="display:none"
+>
+
+<div class="form-group">
+
+<label>Full Name</label>
+
+<input
+id="signupName"
+type="text"
+placeholder="Enter your full name"
+autocomplete="name"
+required
+>
+
+<div class="error" id="signupNameError">
+    Please enter a valid name.
+</div>
+
+</div>
+
+<div class="form-group">
+
+<label>Email Address</label>
+
+<input
+id="signupEmail"
+type="email"
+placeholder="example@gmail.com"
+autocomplete="email"
+required
+>
+
+<div class="error" id="signupEmailError">
+    Please enter a valid email address.
+</div>
+
+</div>
+
+<div class="form-group">
+
+<label>Phone Number</label>
+
+<input
+id="signupPhone"
+type="tel"
+placeholder="10 digit mobile number"
+maxlength="10"
+required
+>
+
+<div class="error" id="signupPhoneError">
+    Please enter a valid 10-digit mobile number.
+</div>
+
+</div>
+
+<div class="form-group">
+
+<label>Password</label>
+
+<input
+id="signupPassword"
+type="password"
+placeholder="Minimum 8 characters"
+autocomplete="new-password"
+required
+>
+
+<div class="error" id="signupPasswordError">
+    Password must be 8+ characters and contain uppercase,
+    lowercase and a number.
+</div>
+
+</div>
+
+<div class="form-group">
+
+<label>Confirm Password</label>
+
+<input
+id="signupConfirmPassword"
+type="password"
+placeholder="Confirm password"
+autocomplete="new-password"
+required
+>
+
+<div class="error" id="signupConfirmPasswordError">
+    Passwords do not match.
+</div>
+
+</div>
+
+<button
+class="btn primary"
+style="width:100%"
+type="submit">
+    Create Account
+</button>
+
+<p style="text-align:center;margin-top:18px;font-size:13px">
+
+Already have an account?
+
+<button
+type="button"
+style="border:0;background:none;color:#c98279;font-weight:700"
+onclick="showLogin()">
+    Login
+</button>
+
+</p>
+
+<button
+type="button"
+class="btn outline"
+style="width:100%;margin-top:12px"
+onclick="continueAsGuest()">
+    Continue as Guest
+</button>
+
+</form>
+
+</div>
+</div>
+
+<!-- =========================
+     CART
+========================= -->
+
+<div class="modal" id="cartModal">
+
+<div class="modal-box">
+
+<button class="close" onclick="closeModal('cartModal')">
+    ×
+</button>
+
+<h2>Your Cart</h2>
+
+<div id="cartItems"></div>
+
+<div class="total">
+    <span>Total</span>
+    <span id="total">₹0</span>
+</div>
+
+<button
+class="btn primary"
+style="width:100%"
+onclick="checkout()">
+    Proceed to Checkout
+</button>
+
+</div>
+</div>
+
+<!-- =========================
+     WISHLIST
+========================= -->
+
+<div class="modal" id="wishlistModal">
+
+<div class="modal-box">
+
+<button class="close" onclick="closeModal('wishlistModal')">
+    ×
+</button>
+
+<h2>♡ Wishlist</h2>
+
+<div id="wishlistItems"></div>
+
+</div>
+</div>
+
+<!-- =========================
+     PRODUCT DETAILS
+========================= -->
+
+<div class="modal" id="productModal">
+
+<div class="modal-box">
+
+<button class="close" onclick="closeModal('productModal')">
+    ×
+</button>
+
+<div id="productDetails"></div>
+
+</div>
+</div>
+
+<!-- =========================
+     CHECKOUT
+========================= -->
+
+<div class="modal" id="checkoutModal">
+
+<div class="modal-box">
+
+<button class="close" onclick="closeModal('checkoutModal')">
+    ×
+</button>
+
+<h2>Checkout</h2>
+
+<form onsubmit="placeOrder(event)" novalidate>
+
+<div class="form-group">
+
+<label>Full Name</label>
+
+<input
+id="name"
+type="text"
+placeholder="Enter your name"
+required
+>
+
+</div>
+
+<div class="form-group">
+
+<label>Email</label>
+
+<input
+id="checkoutEmail"
+type="email"
+placeholder="you@example.com"
+required
+>
+
+</div>
+
+<div class="form-group">
+
+<label>Phone Number</label>
+
+<input
+id="checkoutPhone"
+type="tel"
+placeholder="10 digit mobile number"
+maxlength="10"
+required
+>
+
+</div>
+
+<div class="form-group">
+
+<label>Delivery Address</label>
+
+<textarea
+id="checkoutAddress"
+rows="3"
+placeholder="Enter your complete address"
+required></textarea>
+
+</div>
+
+<div class="form-group">
+
+<label>Payment Method</label>
+
+<select id="paymentMethod">
+
+<option value="UPI">UPI</option>
+<option value="CARD">Debit / Credit Card</option>
+<option value="COD">Cash on Delivery</option>
+
+</select>
+
+</div>
+
+<button
+class="btn primary"
+style="width:100%"
+type="submit">
+    Place Order
+</button>
+
+</form>
+
+</div>
+</div>
+
+<!-- TOAST -->
+
+<div class="toast" id="toast"></div>
+
+<script>
+
+/* =========================================
+   GOOGLE SHEETS CONFIGURATION
+========================================= */
+
+const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxo0h3DBAzRIUMMRG3UlAZCedBYBbH6WCcCDSjwe90MJfXCnbGIM-BPjOHmnCkJNnGVvQ/exec";
+
+/* =========================================
+   PRODUCT DATA
+========================================= */
+
+const FALLBACK_IMAGE =
+"https://images.pexels.com/photos/6716445/pexels-photo-6716445.jpeg?auto=compress&cs=tinysrgb&w=900";
+
+const products = [
+
+{
+    id:1,
+    name:"Rose Gold Hoops",
+    category:"earring",
+    price:149,
+    oldPrice:199,
+    image:"https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=85",
+    rating:4.9,
+    type:"earring",
+    description:"Elegant rose-gold hoops designed for everyday college and casual looks."
+},
+
+{
+    id:2,
+    name:"Rose Pearl Drops",
+    category:"earring",
+    price:179,
+    oldPrice:229,
+    image:"https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?auto=format&fit=crop&w=900&q=85",
+    rating:4.8,
+    type:"earring",
+    description:"Delicate earrings with a beautiful feminine finish."
+},
+
+{
+    id:3,
+    name:"Rose Heart Necklace",
+    category:"necklace",
+    price:199,
+    oldPrice:299,
+    image:"https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=85",
+    rating:4.9,
+    type:"necklace",
+    description:"A beautiful everyday necklace with a rose-gold inspired finish."
+},
+
+{
+    id:4,
+    name:"Blush Gold Ring",
+    category:"ring",
+    price:129,
+    oldPrice:199,
+    image:"https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=900&q=85",
+    rating:4.7,
+    type:"ring",
+    description:"A minimal ring designed for everyday styling."
+},
+
+{
+    id:5,
+    name:"Petal Rose Necklace",
+    category:"necklace",
+    price:159,
+    oldPrice:229,
+    image:"https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=900&q=85",
+    rating:4.8,
+    type:"necklace",
+    description:"A delicate necklace inspired by floral shapes."
+},
+
+{
+    id:6,
+    name:"Rose Crystal Bracelet",
+    category:"bracelet",
+    price:189,
+    oldPrice:279,
+    image:"https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=900&q=85",
+    rating:4.9,
+    type:"bracelet",
+    description:"A sparkling bracelet for parties and special occasions."
+},
+
+{
+    id:7,
+    name:"Tiny Rose Studs",
+    category:"earring",
+    price:99,
+    oldPrice:149,
+    image:"https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=900&q=85",
+    rating:4.7,
+    type:"earring",
+    description:"Small and lightweight studs perfect for daily wear."
+},
+
+{
+    id:8,
+    name:"Rose Stack Ring",
+    category:"ring",
+    price:169,
+    oldPrice:249,
+
+    /* Reliable replacement for broken old image */
+    image:"https://images.pexels.com/photos/6716445/pexels-photo-6716445.jpeg?auto=compress&cs=tinysrgb&w=900",
+
+    rating:4.8,
+    type:"ring",
+    description:"A stylish stack ring with a beautiful polished finish."
+}
+
+];
+
+/* =========================================
+   STORAGE
+========================================= */
+
+let cart = JSON.parse(
+    localStorage.getItem("nivaCart") || "[]"
+);
+
+let wishlist = JSON.parse(
+    localStorage.getItem("nivaWishlist") || "[]"
+);
+
+let currentFilter = "all";
+
+/* =========================================
+   IMAGE FALLBACK
+========================================= */
+
+function imageFallback(img){
+
+    if(img.dataset.fallbackUsed){
+        return;
+    }
+
+    img.dataset.fallbackUsed = "true";
+
+    img.src = FALLBACK_IMAGE;
+}
+
+/* =========================================
+   VALIDATION
+========================================= */
+
+function isValidEmail(email){
+
+    email = email.trim();
+
+    const pattern =
+    /^[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z]{2,})+$/;
+
+    return (
+        email.length >= 6 &&
+        email.length <= 254 &&
+        !email.includes("..") &&
+        pattern.test(email)
+    );
+}
+
+function isValidName(name){
+
+    return /^[A-Za-z][A-Za-z\s.'-]{2,49}$/.test(
+        name.trim()
+    );
+}
+
+function isValidPhone(phone){
+
+    return /^[6-9][0-9]{9}$/.test(
+        phone.trim()
+    );
+}
+
+function isValidPassword(password){
+
+    return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,64}$/.test(
+        password
+    );
+}
+
+/* =========================================
+   AUTH
+========================================= */
+
+function openLogin(){
+
+    showLogin();
+
+    document
+    .getElementById("authModal")
+    .classList.add("show");
+}
+
+function showLogin(){
+
+    document.getElementById("authHeading").innerText =
+        "Login";
+
+    document.getElementById("authSubheading").innerText =
+        "Login with your registered email.";
+
+    document.getElementById("loginForm").style.display =
+        "flex";
+
+    document.getElementById("signupForm").style.display =
+        "none";
+}
+
+function showSignup(){
+
+    document.getElementById("authHeading").innerText =
+        "Create Account";
+
+    document.getElementById("authSubheading").innerText =
+        "Enter your valid details to create your NIVA account.";
+
+    document.getElementById("loginForm").style.display =
+        "none";
+
+    document.getElementById("signupForm").style.display =
+        "flex";
+}
+
+function showError(id,message){
+
+    const element =
+        document.getElementById(id);
+
+    element.innerText = message;
+    element.style.display = "block";
+}
+
+function hideError(id){
+
+    document.getElementById(id).style.display =
+        "none";
+}
+
+/* =========================================
+   SIGNUP
+========================================= */
+
+function signupUser(event){
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById("signupName").value.trim();
+
+    const email =
+        document.getElementById("signupEmail").value.trim();
+
+    const phone =
+        document.getElementById("signupPhone").value.trim();
+
+    const password =
+        document.getElementById("signupPassword").value;
+
+    const confirmPassword =
+        document.getElementById("signupConfirmPassword").value;
+
+    let valid = true;
+
+    if(!isValidName(name)){
+
+        showError(
+            "signupNameError",
+            "Enter a valid name using letters only."
+        );
+
+        valid = false;
+
+    }else{
+
+        hideError("signupNameError");
+    }
+
+    if(!isValidEmail(email)){
+
+        showError(
+            "signupEmailError",
+            "Enter a valid email such as name@gmail.com."
+        );
+
+        valid = false;
+
+    }else{
+
+        hideError("signupEmailError");
+    }
+
+    if(!isValidPhone(phone)){
+
+        showError(
+            "signupPhoneError",
+            "Enter a valid 10-digit Indian mobile number."
+        );
+
+        valid = false;
+
+    }else{
+
+        hideError("signupPhoneError");
+    }
+
+    if(!isValidPassword(password)){
+
+        showError(
+            "signupPasswordError",
+            "Use 8+ characters with uppercase, lowercase and a number."
+        );
+
+        valid = false;
+
+    }else{
+
+        hideError("signupPasswordError");
+    }
+
+    if(password !== confirmPassword){
+
+        showError(
+            "signupConfirmPasswordError",
+            "Passwords do not match."
+        );
+
+        valid = false;
+
+    }else{
+
+        hideError("signupConfirmPasswordError");
+    }
+
+    if(!valid){
+        return;
+    }
+
+    const users =
+        JSON.parse(
+            localStorage.getItem("nivaUsers") || "[]"
+        );
+
+    if(
+        users.some(
+            user =>
+            user.email.toLowerCase() ===
+            email.toLowerCase()
+        )
+    ){
+
+        showError(
+            "signupEmailError",
+            "This email is already registered."
+        );
+
+        return;
+    }
+
+    /*
+       DEMO ONLY:
+       For a real website, use a secure backend
+       authentication system instead of localStorage.
+    */
+
+    users.push({
+        name:name,
+        email:email.toLowerCase(),
+        phone:phone,
+        password:password
+    });
+
+    localStorage.setItem(
+        "nivaUsers",
+        JSON.stringify(users)
+    );
+
+    showToast("Account created successfully ✨");
+
+    showLogin();
+
+    document.getElementById("loginEmail").value =
+        email;
+
+    document.getElementById("loginPassword").value =
+        "";
+}
+
+/* =========================================
+   LOGIN
+========================================= */
+
+function loginUser(event){
+
+    event.preventDefault();
+
+    const email =
+        document.getElementById("loginEmail")
+        .value.trim();
+
+    const password =
+        document.getElementById("loginPassword")
+        .value;
+
+    let valid = true;
+
+    if(!isValidEmail(email)){
+
+        showError(
+            "loginEmailError",
+            "Enter a valid email address."
+        );
+
+        valid = false;
+
+    }else{
+
+        hideError("loginEmailError");
+    }
+
+    if(password.length < 8){
+
+        showError(
+            "loginPasswordError",
+            "Password must contain at least 8 characters."
+        );
+
+        valid = false;
+
+    }else{
+
+        hideError("loginPasswordError");
+    }
+
+    if(!valid){
+        return;
+    }
+
+    const users =
+        JSON.parse(
+            localStorage.getItem("nivaUsers") || "[]"
+        );
+
+    const user = users.find(
+        x =>
+        x.email.toLowerCase() === email.toLowerCase() &&
+        x.password === password
+    );
+
+    if(!user){
+
+        showError(
+            "loginPasswordError",
+            "Invalid email or password."
+        );
+
+        return;
+    }
+
+    closeModal("authModal");
+
+    showToast(
+        "Welcome back, " + user.name + " ✨"
+    );
+}
+
+/* =========================================
+   GUEST ACCESS / LOGIN OVERLAY
+========================================= */
+
+function continueAsGuest(){
+
+    closeModal("authModal");
+
+    showToast("Welcome to NIVA! ✨");
+}
+
+/* =========================================
+   PRODUCTS
+========================================= */
+
+function renderProducts(){
+
+    const container =
+        document.getElementById("products");
+
+    const search =
+        document.getElementById("search")
+        .value
+        .toLowerCase()
+        .trim();
+
+    const filtered = products.filter(product => {
+
+        const category =
+            currentFilter === "all" ||
+            product.category === currentFilter;
+
+        const name =
+            product.name
+            .toLowerCase()
+            .includes(search);
+
+        return category && name;
+    });
+
+    if(!filtered.length){
+
+        container.innerHTML = `
+            <div style="
+                grid-column:1/-1;
+                text-align:center;
+                padding:60px 20px;
+                color:#777;
+            ">
+                <div style="font-size:40px;margin-bottom:10px;">
+                    💎
+                </div>
+                <strong>No jewelry found.</strong>
+                <p style="margin-top:6px;">
+                    Try another search or category.
+                </p>
+            </div>
+        `;
+
+        return;
+    }
+
+    container.innerHTML =
+        filtered.map(product => `
+
+        <div class="card">
+
+            <div class="product-image">
+
+                <button
+                    class="heart ${
+                        wishlist.includes(product.id)
+                        ? "active"
+                        : ""
+                    }"
+                    onclick="toggleWishlist(${product.id})"
+                    aria-label="Wishlist"
+                >
+                    ${
+                        wishlist.includes(product.id)
+                        ? "♥"
+                        : "♡"
+                    }
+                </button>
+
+                <img
+                    src="${product.image}"
+                    alt="${product.name}"
+                    loading="lazy"
+                    decoding="async"
+                    onerror="imageFallback(this)"
+                    onclick="showProduct(${product.id})"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="category">
+                    ${product.category}
+                </div>
+
+                <h3>${product.name}</h3>
+
+                <div class="stars">
+                    ★★★★★
+                    <span style="color:#777">
+                        ${product.rating}
+                    </span>
+                </div>
+
+                <div class="price">
+                    ₹${product.price}
+                    <span class="old">
+                        ₹${product.oldPrice}
+                    </span>
+                </div>
+
+                <button
+                    class="cart-btn"
+                    onclick="addToCart(${product.id})"
+                >
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+        `).join("");
+}
+
+function filterProducts(category,button){
+
+    currentFilter = category;
+
+    document
+    .querySelectorAll(".filter")
+    .forEach(x =>
+        x.classList.remove("active")
+    );
+
+    button.classList.add("active");
+
+    renderProducts();
+}
+
+function searchProducts(){
+
+    renderProducts();
+}
+
+/* =========================================
+   CART
+========================================= */
+
+function addToCart(id){
+
+    const existing =
+        cart.find(x => x.id === id);
+
+    if(existing){
+
+        existing.quantity++;
+
+    }else{
+
+        cart.push({
+            id:id,
+            quantity:1
+        });
+    }
+
+    save();
+
+    showToast("Added to cart ✨");
+}
+
+function openCart(){
+
+    renderCart();
+
+    document
+    .getElementById("cartModal")
+    .classList.add("show");
+}
+
+function renderCart(){
+
+    const container =
+        document.getElementById("cartItems");
+
+    if(!cart.length){
+
+        container.innerHTML = `
+            <div style="
+                text-align:center;
+                padding:30px;
+                color:#777;
+            ">
+                <div style="font-size:40px;">
+                    🛍️
+                </div>
+                <p style="margin-top:10px;">
+                    Your cart is empty.
+                </p>
+            </div>
+        `;
+
+        document.getElementById("total").innerText =
+            "₹0";
+
+        return;
+    }
+
+    let total = 0;
+
+    container.innerHTML =
+        cart.map(item => {
+
+        const product =
+            products.find(x => x.id === item.id);
+
+        const subtotal =
+            product.price * item.quantity;
+
+        total += subtotal;
+
+        return `
+
+        <div class="cart-item">
+
+            <img
+                class="cart-img"
+                src="${product.image}"
+                alt="${product.name}"
+                onerror="imageFallback(this)"
+            >
+
+            <div class="cart-details">
+
+                <strong>${product.name}</strong>
+
+                <div>₹${product.price}</div>
+
+                <div class="quantity">
+
+                    <button
+                        onclick="changeQuantity(${product.id},-1)"
+                    >
+                        −
+                    </button>
+
+                    ${item.quantity}
+
+                    <button
+                        onclick="changeQuantity(${product.id},1)"
+                    >
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+            <button
+                class="remove"
+                onclick="removeCart(${product.id})"
+            >
+                Remove
+            </button>
+
+        </div>
+
+        `;
+
+    }).join("");
+
+    document.getElementById("total").innerText =
+        "₹" + total;
+}
+
+function changeQuantity(id,amount){
+
+    const item =
+        cart.find(x => x.id === id);
+
+    if(!item){
+        return;
+    }
+
+    item.quantity += amount;
+
+    if(item.quantity <= 0){
+
+        removeCart(id);
+
+        return;
+    }
+
+    save();
+
+    renderCart();
+}
+
+function removeCart(id){
+
+    cart =
+        cart.filter(x => x.id !== id);
+
+    save();
+
+    renderCart();
+
+    showToast("Item removed");
+}
+
+/* =========================================
+   WISHLIST
+========================================= */
+
+function toggleWishlist(id){
+
+    if(wishlist.includes(id)){
+
+        wishlist =
+            wishlist.filter(x => x !== id);
+
+        showToast("Removed from wishlist");
+
+    }else{
+
+        wishlist.push(id);
+
+        showToast("Added to wishlist ♥");
+    }
+
+    save();
+
+    renderProducts();
+}
+
+function openWishlist(){
+
+    const container =
+        document.getElementById("wishlistItems");
+
+    if(!wishlist.length){
+
+        container.innerHTML = `
+            <div style="
+                text-align:center;
+                padding:30px;
+                color:#777;
+            ">
+                <div style="font-size:40px;">
+                    ♡
+                </div>
+                <p style="margin-top:10px;">
+                    Your wishlist is empty.
+                </p>
+            </div>
+        `;
+
+    }else{
+
+        container.innerHTML =
+            wishlist.map(id => {
+
+            const product =
+                products.find(x => x.id === id);
+
+            return `
+
+            <div class="cart-item">
+
+                <img
+                    class="cart-img"
+                    src="${product.image}"
+                    alt="${product.name}"
+                    onerror="imageFallback(this)"
+                >
+
+                <div class="cart-details">
+
+                    <strong>
+                        ${product.name}
+                    </strong>
+
+                    <div>
+                        ₹${product.price}
+                    </div>
+
+                </div>
+
+                <button
+                    class="btn primary"
+                    onclick="
+                        addToCart(${product.id});
+                        closeModal('wishlistModal');
+                    "
+                >
+                    Add
+                </button>
+
+            </div>
+
+            `;
+
+        }).join("");
+    }
+
+    document
+    .getElementById("wishlistModal")
+    .classList.add("show");
+}
+
+/* =========================================
+   PRODUCT DETAILS
+========================================= */
+
+function showProduct(id){
+
+    const product =
+        products.find(x => x.id === id);
+
+    document.getElementById("productDetails")
+    .innerHTML = `
+
+        <img
+            src="${product.image}"
+            alt="${product.name}"
+            onerror="imageFallback(this)"
+            style="
+                width:100%;
+                height:360px;
+                object-fit:cover;
+                object-position:center;
+                border-radius:8px;
+                margin-bottom:20px;
+                background:#f7e7e1;
+            "
+        >
+
+        <div class="eyebrow">
+            ${product.category}
+        </div>
+
+        <h2>${product.name}</h2>
+
+        <div class="stars">
+            ★★★★★ ${product.rating}
+        </div>
+
+        <div
+            class="price"
+            style="font-size:23px;margin:15px 0"
+        >
+            ₹${product.price}
+            <span class="old">
+                ₹${product.oldPrice}
+            </span>
+        </div>
+
+        <p style="
+            color:#777;
+            line-height:1.8;
+            margin-bottom:20px;
+        ">
+            ${product.description}
+        </p>
+
+        <button
+            class="btn primary"
+            style="width:100%"
+            onclick="
+                addToCart(${product.id});
+                closeModal('productModal');
+            "
+        >
+            Add to Cart
+        </button>
+
+    `;
+
+    document
+    .getElementById("productModal")
+    .classList.add("show");
+}
+
+/* =========================================
+   CHECKOUT
+========================================= */
+
+function checkout(){
+
+    if(!cart.length){
+
+        showToast("Your cart is empty");
+
+        return;
+    }
+
+    closeModal("cartModal");
+
+    document
+    .getElementById("checkoutModal")
+    .classList.add("show");
+}
+
+function placeOrder(event){
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById("name")
+        .value.trim();
+
+    const email =
+        document.getElementById("checkoutEmail")
+        .value.trim();
+
+    const phone =
+        document.getElementById("checkoutPhone")
+        .value.trim();
+
+    const address =
+        document.getElementById("checkoutAddress")
+        .value.trim();
+
+    const paymentMethod =
+        document.getElementById("paymentMethod")
+        .value;
+
+    if(!isValidName(name)){
+
+        showToast("Please enter a valid name");
+
+        return;
+    }
+
+    if(!isValidEmail(email)){
+
+        showToast("Please enter a valid email");
+
+        return;
+    }
+
+    if(!isValidPhone(phone)){
+
+        showToast(
+            "Please enter a valid 10-digit phone number"
+        );
+
+        return;
+    }
+
+    if(address.length < 10){
+
+        showToast(
+            "Please enter a complete delivery address"
+        );
+
+        return;
+    }
+
+    const orderNumber =
+        "NIVA-" +
+        Date.now()
+        .toString()
+        .slice(-6);
+
+    cart = [];
+
+    save();
+
+    document
+    .querySelector("#checkoutModal form")
+    .reset();
+
+    closeModal("checkoutModal");
+
+    showToast(
+        "Order " +
+        orderNumber +
+        " placed successfully 🎉"
+    );
+
+    // Send order data to Google Sheets
+    sendToGoogleSheets({
+        name: name,
+        email: email,
+        phone: phone,
+        address: address,
+        paymentMethod: paymentMethod
+    });
+}
+
+/* =========================================
+   GOOGLE SHEETS INTEGRATION
+========================================= */
+
+function sendToGoogleSheets(orderData){
+
+    // Check if URL is still placeholder
+    if(GOOGLE_APPS_SCRIPT_URL === "PASTE_YOUR_APPS_SCRIPT_URL_HERE"){
+
+        console.log("Google Apps Script URL not configured yet");
+
+        return;
+    }
+
+    fetch(GOOGLE_APPS_SCRIPT_URL,{
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name: orderData.name,
+            email: orderData.email,
+            phone: orderData.phone,
+            address: orderData.address,
+            paymentMethod: orderData.paymentMethod
+        })
+    })
+    .then(() => {
+
+        // Success - no response available in no-cors mode
+        console.log("Order data sent to Google Sheets");
+
+    })
+    .catch(error => {
+
+        // Failure - show user-friendly message
+        console.error("Google Sheets error:", error);
+
+        setTimeout(() => {
+
+            showToast(
+                "Order placed successfully, but we couldn't sync the order details right now."
+            );
+
+        },2500);
+
+    });
+}
+
+/* =========================================
+   NEWSLETTER
+========================================= */
+
+function subscribe(event){
+
+    event.preventDefault();
+
+    const email =
+        document.getElementById("newsletterEmail")
+        .value.trim();
+
+    if(!isValidEmail(email)){
+
+        showToast(
+            "Please enter a valid email address"
+        );
+
+        return;
+    }
+
+    document
+    .getElementById("newsletterEmail")
+    .value = "";
+
+    showToast(
+        "Welcome to NIVA! 10% off unlocked ✨"
+    );
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+function goShop(){
+
+    document
+    .getElementById("shop")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+}
+
+function goAbout(){
+
+    document
+    .getElementById("about")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+}
+
+function mobileMenu(){
+
+    const nav =
+        document.getElementById("navLinks");
+
+    nav.classList.toggle("mobile-open");
+}
+
+document
+.querySelectorAll("#navLinks a")
+.forEach(link => {
+
+    link.addEventListener("click",() => {
+
+        document
+        .getElementById("navLinks")
+        .classList.remove("mobile-open");
+
+    });
+
+});
+
+/* =========================================
+   MODALS
+========================================= */
+
+function closeModal(id){
+
+    document
+    .getElementById(id)
+    .classList.remove("show");
+}
+
+window.addEventListener("click",function(event){
+
+    if(event.target.classList.contains("modal")){
+
+        event.target.classList.remove("show");
+    }
+});
+
+document.addEventListener("keydown",function(event){
+
+    if(event.key === "Escape"){
+
+        document
+        .querySelectorAll(".modal.show")
+        .forEach(modal => {
+
+            modal.classList.remove("show");
+
+        });
+    }
+});
+
+/* =========================================
+   STORAGE
+========================================= */
+
+function save(){
+
+    localStorage.setItem(
+        "nivaCart",
+        JSON.stringify(cart)
+    );
+
+    localStorage.setItem(
+        "nivaWishlist",
+        JSON.stringify(wishlist)
+    );
+
+    updateCount();
+}
+
+function updateCount(){
+
+    const count =
+        cart.reduce(
+            (total,item) =>
+            total + item.quantity,
+            0
+        );
+
+    document
+    .getElementById("cartCount")
+    .innerText = count;
+}
+
+/* =========================================
+   TOAST
+========================================= */
+
+let toastTimer;
+
+function showToast(message){
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.innerText = message;
+
+    toast.classList.add("show");
+
+    clearTimeout(toastTimer);
+
+    toastTimer =
+        setTimeout(() => {
+
+            toast.classList.remove("show");
+
+        },2300);
+}
+
+/* =========================================
+   START
+========================================= */
+
+renderProducts();
+
+updateCount();
+
+// Show login/register modal on page load
+openLogin();
+
+</script>
+
+</body>
+</html>

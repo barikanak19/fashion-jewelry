@@ -2129,6 +2129,10 @@ let wishlist = JSON.parse(
 
 let currentFilter = "all";
 
+let currentUser = JSON.parse(
+    localStorage.getItem("nivaCurrentUser") || "null"
+);
+
 /* =========================================
    IMAGE FALLBACK
 ========================================= */
@@ -2461,6 +2465,13 @@ function loginUser(event){
 
         return;
     }
+
+    // Set current user session
+    currentUser = user;
+    localStorage.setItem(
+        "nivaCurrentUser",
+        JSON.stringify(currentUser)
+    );
 
     closeModal("authModal");
 
@@ -2983,6 +2994,18 @@ function placeOrder(event){
 
     event.preventDefault();
 
+    // Check if user is logged in
+    if(!currentUser){
+
+        closeModal("checkoutModal");
+
+        showLogin();
+
+        showToast("Please login to place your order");
+
+        return;
+    }
+
     const name =
         document.getElementById("name")
         .value.trim();
@@ -3289,9 +3312,6 @@ function showToast(message){
 renderProducts();
 
 updateCount();
-
-// Show login/register modal on page load
-openLogin();
 
 </script>
 

@@ -794,16 +794,6 @@ footer{
     align-items:center;
     justify-content:center;
     padding:20px;
-    animation:fadeIn .3s ease;
-}
-
-@keyframes fadeIn{
-    from{
-        opacity:0;
-    }
-    to{
-        opacity:1;
-    }
 }
 
 .modal.show{
@@ -819,18 +809,6 @@ footer{
     position:relative;
     border-radius:12px;
     box-shadow:0 30px 80px rgba(0,0,0,.25);
-    animation:slideUp .3s ease;
-}
-
-@keyframes slideUp{
-    from{
-        transform:translateY(20px);
-        opacity:0;
-    }
-    to{
-        transform:translateY(0);
-        opacity:1;
-    }
 }
 
 .close{
@@ -1205,7 +1183,6 @@ footer{
     <li><a href="#about">About</a></li>
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="javascript:void(0)" onclick="openOrderHistory()">Orders</a></li>
 </ul>
 
 <div class="nav-actions">
@@ -2016,25 +1993,6 @@ type="submit">
 </div>
 </div>
 
-<!-- =========================
-     ORDER HISTORY
-========================= -->
-
-<div class="modal" id="orderHistoryModal">
-
-<div class="modal-box">
-
-<button class="close" onclick="closeModal('orderHistoryModal')">
-    ×
-</button>
-
-<h2>Order History</h2>
-
-<div id="orderHistoryItems"></div>
-
-</div>
-</div>
-
 <!-- TOAST -->
 
 <div class="toast" id="toast"></div>
@@ -2043,7 +2001,6 @@ type="submit">
 
 /* =========================================
    GOOGLE SHEETS CONFIGURATION
-   PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL BELOW
 ========================================= */
 
 const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxo0h3DBAzRIUMMRG3UlAZCedBYBbH6WCcCDSjwe90MJfXCnbGIM-BPjOHmnCkJNnGVvQ/exec";
@@ -2230,13 +2187,6 @@ function isValidPassword(password){
         password
     );
 }
-
-/* =========================================
-   GUEST ACCESS / LOGIN OVERLAY
-========================================= */
-
-// Track if user has seen auth screen on first load
-let hasSeenAuthScreen = sessionStorage.getItem("nivaSeenAuth") === "true";
 
 /* =========================================
    AUTH
@@ -2436,10 +2386,6 @@ function signupUser(event){
 
     showToast("Account created successfully ✨");
 
-    // Mark auth screen as seen
-    sessionStorage.setItem("nivaSeenAuth", "true");
-    hasSeenAuthScreen = true;
-
     showLogin();
 
     document.getElementById("loginEmail").value =
@@ -2527,10 +2473,6 @@ function loginUser(event){
         JSON.stringify(currentUser)
     );
 
-    // Mark auth screen as seen
-    sessionStorage.setItem("nivaSeenAuth", "true");
-    hasSeenAuthScreen = true;
-
     closeModal("authModal");
 
     showToast(
@@ -2544,29 +2486,9 @@ function loginUser(event){
 
 function continueAsGuest(){
 
-    // Mark that user has seen auth screen
-    sessionStorage.setItem("nivaSeenAuth", "true");
-    hasSeenAuthScreen = true;
-
     closeModal("authModal");
 
     showToast("Welcome to NIVA! ✨");
-}
-
-// Show auth modal on first load if user hasn't seen it
-function checkFirstLoad(){
-
-    // Only show if user hasn't seen it this session AND is not logged in
-    if(!hasSeenAuthScreen && !currentUser){
-
-        setTimeout(() => {
-
-            document
-            .getElementById("authModal")
-            .classList.add("show");
-
-        }, 500);
-    }
 }
 
 /* =========================================
@@ -3063,33 +2985,23 @@ function checkout(){
 
     closeModal("cartModal");
 
-    // Pre-fill checkout form with current user data if logged in
-    if(currentUser){
-
-        document.getElementById("name").value =
-            currentUser.name || "";
-
-        document.getElementById("checkoutEmail").value =
-            currentUser.email || "";
-
-        document.getElementById("checkoutPhone").value =
-            currentUser.phone || "";
-    }
-
     document
     .getElementById("checkoutModal")
     .classList.add("show");
 }
 
-// Prevent duplicate submissions
-let isSubmittingOrder = false;
-
 function placeOrder(event){
 
     event.preventDefault();
 
-    // Prevent duplicate submissions
-    if(isSubmittingOrder){
+    // Check if user is logged in
+    if(!currentUser){
+
+        closeModal("checkoutModal");
+
+        showLogin();
+
+        showToast("Please login to place your order");
 
         return;
     }
@@ -3146,47 +3058,11 @@ function placeOrder(event){
         return;
     }
 
-    // Set submission flag
-    isSubmittingOrder = true;
-
     const orderNumber =
         "NIVA-" +
         Date.now()
         .toString()
         .slice(-6);
-
-    // Calculate order total
-    let orderTotal = cart.reduce((total, item) => {
-        const product = products.find(x => x.id === item.id);
-        return total + (product.price * item.quantity);
-    }, 0);
-
-    // Store order in localStorage for order history
-    const orders = JSON.parse(
-        localStorage.getItem("nivaOrders") || "[]"
-    );
-
-    orders.push({
-        orderNumber: orderNumber,
-        name: name,
-        email: email,
-        phone: phone,
-        address: address,
-        paymentMethod: paymentMethod,
-        total: orderTotal,
-        items: cart.map(item => {
-            const product = products.find(x => x.id === item.id);
-            return {
-                name: product.name,
-                price: product.price,
-                quantity: item.quantity
-            };
-        }),
-        date: new Date().toISOString(),
-        status: "Confirmed"
-    });
-
-    localStorage.setItem("nivaOrders", JSON.stringify(orders));
 
     cart = [];
 
@@ -3210,17 +3086,8 @@ function placeOrder(event){
         email: email,
         phone: phone,
         address: address,
-        paymentMethod: paymentMethod,
-        orderNumber: orderNumber,
-        total: orderTotal
+        paymentMethod: paymentMethod
     });
-
-    // Reset submission flag after a delay
-    setTimeout(() => {
-
-        isSubmittingOrder = false;
-
-    }, 2000);
 }
 
 /* =========================================
@@ -3230,7 +3097,7 @@ function placeOrder(event){
 function sendToGoogleSheets(orderData){
 
     // Check if URL is still placeholder
-    if(GOOGLE_APPS_SCRIPT_URL === "https://script.google.com/macros/s/AKfycbxo0h3DBAzRIUMMRG3UlAZCedBYBbH6WCcCDSjwe90MJfXCnbGIM-BPjOHmnCkJNnGVvQ/exec"){
+    if(GOOGLE_APPS_SCRIPT_URL === "PASTE_YOUR_APPS_SCRIPT_URL_HERE"){
 
         console.log("Google Apps Script URL not configured yet");
 
@@ -3414,166 +3281,6 @@ function updateCount(){
 }
 
 /* =========================================
-   ORDER HISTORY
-========================================= */
-
-function openOrderHistory(){
-
-    renderOrderHistory();
-
-    document
-    .getElementById("orderHistoryModal")
-    .classList.add("show");
-}
-
-function renderOrderHistory(){
-
-    const container =
-        document.getElementById("orderHistoryItems");
-
-    const orders =
-        JSON.parse(
-            localStorage.getItem("nivaOrders") || "[]"
-        );
-
-    if(!orders.length){
-
-        container.innerHTML = `
-            <div style="
-                text-align:center;
-                padding:30px;
-                color:#777;
-            ">
-                <div style="font-size:40px;">
-                    📦
-                </div>
-                <p style="margin-top:10px;">
-                    No orders yet.
-                </p>
-                <p style="font-size:13px;margin-top:5px;">
-                    Start shopping to see your orders here!
-                </p>
-            </div>
-        `;
-
-        return;
-    }
-
-    // Sort orders by date (newest first)
-    orders.sort((a, b) => 
-        new Date(b.date) - new Date(a.date)
-    );
-
-    container.innerHTML =
-        orders.map(order => {
-
-        const orderDate = new Date(order.date);
-        const formattedDate = orderDate.toLocaleDateString("en-IN", {
-            day: "numeric",
-            month: "short",
-            year: "numeric"
-        });
-
-        const itemsList = order.items.map(item => 
-            `${item.name} × ${item.quantity}`
-        ).join(", ");
-
-        return `
-
-        <div style="
-            border:1px solid var(--border);
-            border-radius:8px;
-            padding:20px;
-            margin-bottom:15px;
-            background:white;
-        ">
-
-            <div style="
-                display:flex;
-                justify-content:space-between;
-                align-items:flex-start;
-                margin-bottom:12px;
-                flex-wrap:wrap;
-                gap:10px;
-            ">
-
-                <div>
-                    <strong style="font-size:15px;">
-                        ${order.orderNumber}
-                    </strong>
-                    <div style="
-                        font-size:12px;
-                        color:var(--muted);
-                        margin-top:3px;
-                    ">
-                        ${formattedDate}
-                    </div>
-                </div>
-
-                <div style="
-                    background:var(--light);
-                    color:var(--green);
-                    padding:5px 12px;
-                    border-radius:20px;
-                    font-size:12px;
-                    font-weight:600;
-                ">
-                    ${order.status}
-                </div>
-
-            </div>
-
-            <div style="
-                font-size:13px;
-                color:var(--muted);
-                margin-bottom:8px;
-                line-height:1.6;
-            ">
-                <strong style="color:var(--dark);">Items:</strong> 
-                ${itemsList}
-            </div>
-
-            <div style="
-                font-size:13px;
-                color:var(--muted);
-                margin-bottom:8px;
-            ">
-                <strong style="color:var(--dark);">Payment:</strong> 
-                ${order.paymentMethod}
-            </div>
-
-            <div style="
-                font-size:13px;
-                color:var(--muted);
-                margin-bottom:8px;
-            ">
-                <strong style="color:var(--dark);">Delivery:</strong> 
-                ${order.address}
-            </div>
-
-            <div style="
-                display:flex;
-                justify-content:space-between;
-                align-items:center;
-                margin-top:12px;
-                padding-top:12px;
-                border-top:1px solid var(--border);
-            ">
-
-                <strong style="font-size:17px;">
-                    Total: ₹${order.total}
-                </strong>
-
-            </div>
-
-        </div>
-
-        `;
-
-    }).join("");
-}
-
-/* =========================================
    TOAST
 ========================================= */
 
@@ -3605,9 +3312,6 @@ function showToast(message){
 renderProducts();
 
 updateCount();
-
-// Show auth modal on first load
-checkFirstLoad();
 
 </script>
 

@@ -987,6 +987,66 @@ footer{
 }
 
 /* =========================
+   HOW TO USE
+========================= */
+
+.how-steps{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    margin-top:8px;
+}
+
+.how-step{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    padding:14px;
+    background:var(--light);
+    border:1px solid var(--border);
+    border-radius:8px;
+    transition:.25s;
+}
+
+.how-step:hover{
+    border-color:var(--rose);
+    box-shadow:0 8px 20px rgba(40,30,20,.08);
+}
+
+.how-step-icon{
+    flex-shrink:0;
+    width:38px;
+    height:38px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--pink);
+    border-radius:50%;
+    font-size:17px;
+}
+
+.how-step-content strong{
+    display:block;
+    margin-bottom:4px;
+    font-size:14.5px;
+}
+
+.how-step-content p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.65;
+}
+
+.how-footer-note{
+    text-align:center;
+    color:var(--muted);
+    font-size:12.5px;
+    margin-top:22px;
+    padding-top:16px;
+    border-top:1px solid var(--border);
+}
+
+/* =========================
    MOBILE
 ========================= */
 
@@ -1154,6 +1214,25 @@ footer{
         bottom:15px;
         text-align:center;
     }
+
+    .how-step{
+        padding:11px;
+        gap:10px;
+    }
+
+    .how-step-icon{
+        width:32px;
+        height:32px;
+        font-size:15px;
+    }
+
+    .how-step-content strong{
+        font-size:13.5px;
+    }
+
+    .how-step-content p{
+        font-size:12.5px;
+    }
 }
 </style>
 </head>
@@ -1184,6 +1263,7 @@ footer{
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="javascript:void(0)" onclick="openOrderHistory()">Orders</a></li>
+    <li><a href="javascript:void(0)" onclick="openHowToUse()">How to Use</a></li>
 </ul>
 
 <div class="nav-actions">
@@ -2009,6 +2089,107 @@ type="submit">
 <h2>📦 Order History</h2>
 
 <div id="orderHistoryContent"></div>
+
+</div>
+</div>
+
+<!-- =========================
+     HOW TO USE
+========================= -->
+
+<div class="modal" id="howToUseModal">
+
+<div class="modal-box">
+
+<button class="close" onclick="closeModal('howToUseModal')">
+    ×
+</button>
+
+<div class="auth-title">
+
+<div class="eyebrow">
+    GETTING STARTED
+</div>
+
+<h2>How to Use NIVA ✨</h2>
+
+<p>
+    A quick guide to shopping with us.
+</p>
+
+</div>
+
+<div class="how-steps">
+
+<div class="how-step">
+    <div class="how-step-icon">🔍</div>
+    <div class="how-step-content">
+        <strong>1. Browse and Search</strong>
+        <p>Explore the full collection, or use the search bar and category filters to find necklaces, earrings, rings and bracelets you love.</p>
+    </div>
+</div>
+
+<div class="how-step">
+    <div class="how-step-icon">💎</div>
+    <div class="how-step-content">
+        <strong>2. View Product Details</strong>
+        <p>Tap any product image for a closer look at its price, rating and description.</p>
+    </div>
+</div>
+
+<div class="how-step">
+    <div class="how-step-icon">♡</div>
+    <div class="how-step-content">
+        <strong>3. Save to Wishlist</strong>
+        <p>Tap the heart icon on a product to save it to your Wishlist for later.</p>
+    </div>
+</div>
+
+<div class="how-step">
+    <div class="how-step-icon">🛒</div>
+    <div class="how-step-content">
+        <strong>4. Add to Cart</strong>
+        <p>Click "Add to Cart" on any item you would like to buy.</p>
+    </div>
+</div>
+
+<div class="how-step">
+    <div class="how-step-icon">🧾</div>
+    <div class="how-step-content">
+        <strong>5. Manage Your Cart</strong>
+        <p>Open the cart icon anytime to update quantities or remove items.</p>
+    </div>
+</div>
+
+<div class="how-step">
+    <div class="how-step-icon">🔑</div>
+    <div class="how-step-content">
+        <strong>6. Login or Sign Up</strong>
+        <p>Create a free account, or continue as guest to browse. You will need to log in to place an order.</p>
+    </div>
+</div>
+
+<div class="how-step">
+    <div class="how-step-icon">💳</div>
+    <div class="how-step-content">
+        <strong>7. Checkout</strong>
+        <p>Enter your delivery details and choose UPI, Card, or Cash on Delivery to complete your purchase.</p>
+    </div>
+</div>
+
+<div class="how-step">
+    <div class="how-step-icon">📦</div>
+    <div class="how-step-content">
+        <strong>8. Track Your Orders</strong>
+        <p>Visit the "Orders" menu anytime to view your complete order history.</p>
+    </div>
+</div>
+
+</div>
+
+<div class="how-footer-note">
+    Happy shopping! Need help? Email <a href="mailto:saba@niva.com" style="color:var(--rose);font-weight:700">saba@niva.com</a>
+</div>
 
 </div>
 </div>
@@ -3507,6 +3688,17 @@ document
     });
 
 });
+
+/* =========================================
+   HOW TO USE
+========================================= */
+
+function openHowToUse(){
+
+    document
+    .getElementById("howToUseModal")
+    .classList.add("show");
+}
 
 /* =========================================
    MODALS

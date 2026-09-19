@@ -6,6 +6,16 @@
 <meta name="description" content="NIVA - Affordable rose gold everyday jewelry by Saba">
 <title>NIVA | Rose Gold Jewelry</title>
 
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="NIVA | Rose Gold Jewelry">
+<meta property="og:description" content="NIVA - Affordable rose gold everyday jewelry by Saba">
+<meta property="og:image" content="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=85">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NIVA | Rose Gold Jewelry">
+<meta name="twitter:description" content="NIVA - Affordable rose gold everyday jewelry by Saba">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=85">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
@@ -1047,6 +1057,130 @@ footer{
 }
 
 /* =========================
+   WEBSITE GUIDE / FAQ
+========================= */
+
+.faq-list{
+    max-width:760px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.faq-item{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:8px;
+    overflow:hidden;
+    transition:.25s;
+}
+
+.faq-item:hover{
+    border-color:var(--rose);
+}
+
+.faq-question{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:18px 22px;
+    border:0;
+    background:transparent;
+    text-align:left;
+}
+
+.faq-question span:first-child{
+    font-family:"Playfair Display",serif;
+    font-size:17px;
+    font-weight:600;
+    color:var(--dark);
+}
+
+.faq-icon{
+    flex-shrink:0;
+    width:28px;
+    height:28px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:var(--pink);
+    color:var(--rose-dark);
+    font-size:17px;
+    font-weight:700;
+    transition:transform .3s;
+}
+
+.faq-item.open .faq-icon{
+    transform:rotate(45deg);
+}
+
+.faq-answer-wrap{
+    display:grid;
+    grid-template-rows:0fr;
+    transition:grid-template-rows .35s ease;
+}
+
+.faq-item.open .faq-answer-wrap{
+    grid-template-rows:1fr;
+}
+
+.faq-answer{
+    overflow:hidden;
+}
+
+.faq-answer p{
+    padding:0 22px 20px;
+    color:var(--muted);
+    line-height:1.75;
+    font-size:14px;
+}
+
+.faq-answer ul{
+    padding:0 22px 20px 42px;
+    color:var(--muted);
+    line-height:1.75;
+    font-size:14px;
+}
+
+.faq-answer li{
+    margin-bottom:4px;
+}
+
+.faq-note{
+    font-style:italic;
+}
+
+.faq-flow{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:2px;
+    margin:6px 22px 18px;
+}
+
+.faq-flow-step{
+    background:var(--light);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:8px 18px;
+    font-size:12.5px;
+    font-weight:600;
+    color:var(--dark);
+    text-align:center;
+}
+
+.faq-flow-arrow{
+    color:var(--rose);
+    font-weight:700;
+    font-size:14px;
+    line-height:1;
+}
+
+/* =========================
    MOBILE
 ========================= */
 
@@ -1233,6 +1367,39 @@ footer{
     .how-step-content p{
         font-size:12.5px;
     }
+
+    .faq-question{
+        padding:15px 16px;
+    }
+
+    .faq-question span:first-child{
+        font-size:15px;
+    }
+
+    .faq-icon{
+        width:24px;
+        height:24px;
+        font-size:15px;
+    }
+
+    .faq-answer p{
+        padding:0 16px 18px;
+        font-size:13px;
+    }
+
+    .faq-answer ul{
+        padding:0 16px 18px 32px;
+        font-size:13px;
+    }
+
+    .faq-flow{
+        margin:6px 16px 16px;
+    }
+
+    .faq-flow-step{
+        padding:7px 14px;
+        font-size:12px;
+    }
 }
 </style>
 </head>
@@ -1264,6 +1431,7 @@ footer{
     <li><a href="#contact">Contact</a></li>
     <li><a href="javascript:void(0)" onclick="openOrderHistory()">Orders</a></li>
     <li><a href="javascript:void(0)" onclick="openHowToUse()">How to Use</a></li>
+    <li><a href="#guide">Website Guide</a></li>
 </ul>
 
 <div class="nav-actions">
@@ -1611,6 +1779,233 @@ required
 <button type="submit">Subscribe</button>
 
 </form>
+
+</section>
+
+<!-- =========================
+     WEBSITE GUIDE (NEW MODULE)
+========================= -->
+
+<section class="section" id="guide">
+
+<div class="heading">
+
+<div class="eyebrow">
+    WEBSITE GUIDE
+</div>
+
+<h2>How This Website Works</h2>
+
+<p>
+    A behind-the-scenes look at how NIVA was built, hosted and can grow.
+</p>
+
+</div>
+
+<div class="faq-list">
+
+<div class="faq-item">
+<h3><button type="button" class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+    <span>What is SEO?</span>
+    <span class="faq-icon" aria-hidden="true">+</span>
+</button></h3>
+<div class="faq-answer-wrap">
+<div class="faq-answer">
+<p>SEO (Search Engine Optimisation) is the practice of shaping a website so search engines like Google can find it, understand it and rank it fairly for relevant searches. It matters because most shoppers discover new brands by searching rather than typing in a web address directly — good SEO gives someone searching for something like rose gold earrings under ₹200 a real chance of landing here. Simple, honest steps such as clear titles, accurate descriptions and fast-loading pages all help, with no tricks required.</p>
+</div>
+</div>
+</div>
+
+<div class="faq-item">
+<h3><button type="button" class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+    <span>How was this website created?</span>
+    <span class="faq-icon" aria-hidden="true">+</span>
+</button></h3>
+<div class="faq-answer-wrap">
+<div class="faq-answer">
+<p>NIVA was built by hand with HTML, CSS and JavaScript — no frameworks, page builders or backend server involved. All three currently live together in a single HTML file: the structure, the styling and the interactive logic are written and maintained in one place, which keeps the project simple to understand and easy to deploy.</p>
+</div>
+</div>
+</div>
+
+<div class="faq-item">
+<h3><button type="button" class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+    <span>What technologies power this website?</span>
+    <span class="faq-icon" aria-hidden="true">+</span>
+</button></h3>
+<div class="faq-answer-wrap">
+<div class="faq-answer">
+<p>Three core web technologies work together here, all in one file:</p>
+<ul>
+<li><strong>HTML</strong> — the structure and content: sections, product cards, forms and buttons.</li>
+<li><strong>CSS</strong> — the look and feel: the rose-gold palette, fonts, spacing, layout and responsive behaviour.</li>
+<li><strong>JavaScript</strong> — the behaviour: rendering products, the cart and wishlist, search and filters, form validation, and sending order data onward.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="faq-item">
+<h3><button type="button" class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+    <span>Where is this website hosted?</span>
+    <span class="faq-icon" aria-hidden="true">+</span>
+</button></h3>
+<div class="faq-answer-wrap">
+<div class="faq-answer">
+<p>NIVA is deployed on Vercel, a hosting platform built for front-end projects like this one. Vercel takes the project's code, builds it and serves it from a fast global network, giving the site a live public URL with free HTTPS, and it redeploys automatically whenever the code is updated.</p>
+</div>
+</div>
+</div>
+
+<div class="faq-item">
+<h3><button type="button" class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+    <span>What database does this website use?</span>
+    <span class="faq-icon" aria-hidden="true">+</span>
+</button></h3>
+<div class="faq-answer-wrap">
+<div class="faq-answer">
+<p>Order details are stored in Google Sheets, used here as a simple, spreadsheet-style data store. It's worth being clear that Google Sheets is not a true database like MySQL or PostgreSQL — it has no query language, indexing or relational structure — but for a small project it's a practical, visual way to collect and review orders without setting up server infrastructure.</p>
+</div>
+</div>
+</div>
+
+<div class="faq-item">
+<h3><button type="button" class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+    <span>How is Google Sheets connected to the website?</span>
+    <span class="faq-icon" aria-hidden="true">+</span>
+</button></h3>
+<div class="faq-answer-wrap">
+<div class="faq-answer">
+<p>The connection is intentionally simple:</p>
+<ul>
+<li>A Google Sheet is set up to receive order rows.</li>
+<li>A Google Apps Script is attached to that sheet and published as a small web app with its own private URL.</li>
+<li>When someone places an order, the site's JavaScript sends the order details to that URL as a background request.</li>
+<li>The Apps Script receives the data and writes it into a new row in the sheet automatically.</li>
+</ul>
+<p>The request is sent in a "fire-and-forget" mode, so the browser never reads a response back. The exact web app URL and any credentials are kept out of this guide for security.</p>
+</div>
+</div>
+</div>
+
+<div class="faq-item">
+<h3><button type="button" class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+    <span>How was the website published, from code to live site?</span>
+    <span class="faq-icon" aria-hidden="true">+</span>
+</button></h3>
+<div class="faq-answer-wrap">
+<div class="faq-answer">
+<p>Getting the site live follows a simple, repeatable pipeline:</p>
+<div class="faq-flow">
+<div class="faq-flow-step">Code written locally</div>
+<div class="faq-flow-arrow">↓</div>
+<div class="faq-flow-step">Pushed to a GitHub repository</div>
+<div class="faq-flow-arrow">↓</div>
+<div class="faq-flow-step">Repository connected to Vercel</div>
+<div class="faq-flow-arrow">↓</div>
+<div class="faq-flow-step">Vercel builds and deploys</div>
+<div class="faq-flow-arrow">↓</div>
+<div class="faq-flow-step">Live website, publicly online</div>
+</div>
+<p>From then on, every update just means pushing new code — Vercel handles rebuilding and republishing automatically.</p>
+</div>
+</div>
+</div>
+
+<div class="faq-item">
+<h3><button type="button" class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+    <span>How can this website become more popular?</span>
+    <span class="faq-icon" aria-hidden="true">+</span>
+</button></h3>
+<div class="faq-answer-wrap">
+<div class="faq-answer">
+<p>Growth here comes from consistent, ethical basics rather than shortcuts:</p>
+<ul>
+<li>Solid on-page SEO (titles, descriptions, headings)</li>
+<li>Showing up in relevant Google searches</li>
+<li>Sharing products on Instagram and Pinterest</li>
+<li>Bright, high-quality product photography</li>
+<li>A mobile-friendly, fast-loading site</li>
+<li>Clear product titles and descriptions with natural keywords</li>
+<li>Tracking performance with Google Search Console</li>
+<li>Refreshing content regularly with new arrivals</li>
+<li>Encouraging happy customers to share NIVA with friends</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="faq-item">
+<h3><button type="button" class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+    <span>How can this website appear on Google search?</span>
+    <span class="faq-icon" aria-hidden="true">+</span>
+</button></h3>
+<div class="faq-answer-wrap">
+<div class="faq-answer">
+<p>To be found on Google, a page generally needs:</p>
+<ul>
+<li>A clear, descriptive page title</li>
+<li>A concise meta description</li>
+<li>Proper heading structure — one H1, then H2s and H3s</li>
+<li>Natural keywords used within the actual content</li>
+<li>Descriptive alt text on images</li>
+<li>A sitemap listing the site's pages</li>
+<li>Verification with Google Search Console</li>
+</ul>
+<p>Google then crawls and indexes the page over time before it starts appearing in search results.</p>
+</div>
+</div>
+</div>
+
+<div class="faq-item">
+<h3><button type="button" class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+    <span>Is this website mobile responsive?</span>
+    <span class="faq-icon" aria-hidden="true">+</span>
+</button></h3>
+<div class="faq-answer-wrap">
+<div class="faq-answer">
+<p>Yes — the whole layout is built with responsive HTML and CSS rather than a separate mobile version. Flexible layouts, relative sizing and two breakpoints in the stylesheet reshape the page for smaller screens — collapsing the navigation into a menu, stacking the product grid, and resizing text and images — so NIVA works smoothly on phones, tablets and desktops alike.</p>
+</div>
+</div>
+</div>
+
+<div class="faq-item">
+<h3><button type="button" class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+    <span>How can new products be added?</span>
+    <span class="faq-icon" aria-hidden="true">+</span>
+</button></h3>
+<div class="faq-answer-wrap">
+<div class="faq-answer">
+<p>Right now, every product lives directly inside the website's JavaScript as a simple list of objects, each with a name, price, category, image and description. Adding a new piece of jewelry means adding one more object to that list with the same fields as the others. Google Sheets isn't used for the product catalogue in this version of the site — it's only used to record orders once a customer checks out.</p>
+</div>
+</div>
+</div>
+
+<div class="faq-item">
+<h3><button type="button" class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+    <span>How does data flow from the screen to storage?</span>
+    <span class="faq-icon" aria-hidden="true">+</span>
+</button></h3>
+<div class="faq-answer-wrap">
+<div class="faq-answer">
+<p>Here's the simple path data takes on this site:</p>
+<div class="faq-flow">
+<div class="faq-flow-step">User</div>
+<div class="faq-flow-arrow">↓</div>
+<div class="faq-flow-step">Website UI</div>
+<div class="faq-flow-arrow">↓</div>
+<div class="faq-flow-step">HTML + CSS + JavaScript</div>
+<div class="faq-flow-arrow">↓</div>
+<div class="faq-flow-step">Google Sheets (order records)</div>
+<div class="faq-flow-arrow">↓</div>
+<div class="faq-flow-step">Confirmation and Order History</div>
+</div>
+<p class="faq-note">In practice, the confirmation and Order History are shown straight from your own browser's storage, while Google Sheets quietly keeps a separate copy for the shop owner.</p>
+</div>
+</div>
+</div>
+
+</div>
 
 </section>
 
@@ -3698,6 +4093,26 @@ function openHowToUse(){
     document
     .getElementById("howToUseModal")
     .classList.add("show");
+}
+
+/* =========================================
+   WEBSITE GUIDE / FAQ
+========================================= */
+
+function toggleFaq(button){
+
+    const item =
+        button.closest(".faq-item");
+
+    const expanding =
+        !item.classList.contains("open");
+
+    item.classList.toggle("open");
+
+    button.setAttribute(
+        "aria-expanded",
+        expanding ? "true" : "false"
+    );
 }
 
 /* =========================================

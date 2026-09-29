@@ -665,35 +665,6 @@ header{
 }
 
 /* =========================
-   REVIEWS
-========================= */
-
-.reviews{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.review{
-    background:white;
-    border:1px solid var(--border);
-    padding:27px;
-    border-radius:8px;
-    transition:.3s;
-}
-
-.review:hover{
-    transform:translateY(-4px);
-    box-shadow:0 15px 35px rgba(40,30,20,.08);
-}
-
-.review p{
-    color:var(--muted);
-    line-height:1.8;
-    margin:14px 0;
-}
-
-/* =========================
    NEWSLETTER
 ========================= */
 
@@ -1056,128 +1027,106 @@ footer{
     border-top:1px solid var(--border);
 }
 
-/* =========================
-   WEBSITE GUIDE / FAQ
-========================= */
-
-.faq-list{
-    max-width:760px;
-    margin:auto;
-    display:flex;
-    flex-direction:column;
-    gap:14px;
+.questionnaire-section{
+    background:#f4e7e2;
+    padding:76px 22px;
 }
 
-.faq-item{
+.questionnaire-wrap{
+    max-width:850px;
+    margin:auto;
+}
+
+.questionnaire-form{
     background:white;
     border:1px solid var(--border);
     border-radius:8px;
-    overflow:hidden;
-    transition:.25s;
+    padding:30px;
+    box-shadow:var(--shadow);
 }
 
-.faq-item:hover{
-    border-color:var(--rose);
-}
-
-.faq-question{
-    width:100%;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:16px;
-    padding:18px 22px;
-    border:0;
-    background:transparent;
-    text-align:left;
-}
-
-.faq-question span:first-child{
-    font-family:"Playfair Display",serif;
-    font-size:17px;
-    font-weight:600;
-    color:var(--dark);
-}
-
-.faq-icon{
-    flex-shrink:0;
-    width:28px;
-    height:28px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    background:var(--pink);
-    color:var(--rose-dark);
-    font-size:17px;
-    font-weight:700;
-    transition:transform .3s;
-}
-
-.faq-item.open .faq-icon{
-    transform:rotate(45deg);
-}
-
-.faq-answer-wrap{
+.questionnaire-grid{
     display:grid;
-    grid-template-rows:0fr;
-    transition:grid-template-rows .35s ease;
+    grid-template-columns:1fr 1fr;
+    gap:0 18px;
 }
 
-.faq-item.open .faq-answer-wrap{
-    grid-template-rows:1fr;
+.questionnaire-form fieldset{
+    min-width:0;
+    border:0;
+    margin:0 0 18px;
+    padding:0;
 }
 
-.faq-answer{
-    overflow:hidden;
-}
-
-.faq-answer p{
-    padding:0 22px 20px;
-    color:var(--muted);
-    line-height:1.75;
+.questionnaire-form legend,
+.questionnaire-form label{
+    display:block;
     font-size:14px;
-}
-
-.faq-answer ul{
-    padding:0 22px 20px 42px;
-    color:var(--muted);
-    line-height:1.75;
-    font-size:14px;
-}
-
-.faq-answer li{
-    margin-bottom:4px;
-}
-
-.faq-note{
-    font-style:italic;
-}
-
-.faq-flow{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:2px;
-    margin:6px 22px 18px;
-}
-
-.faq-flow-step{
-    background:var(--light);
-    border:1px solid var(--border);
-    border-radius:20px;
-    padding:8px 18px;
-    font-size:12.5px;
     font-weight:600;
-    color:var(--dark);
-    text-align:center;
+    margin-bottom:8px;
 }
 
-.faq-flow-arrow{
-    color:var(--rose);
-    font-weight:700;
+.questionnaire-form input[type="text"],
+.questionnaire-form input[type="number"],
+.questionnaire-form input[type="email"],
+.questionnaire-form select{
+    width:100%;
+    min-height:46px;
+    padding:11px 12px;
+    border:1px solid var(--border);
+    border-radius:4px;
+    outline:0;
+    background:white;
+}
+
+.questionnaire-form input:focus,
+.questionnaire-form select:focus{
+    border-color:var(--rose);
+    box-shadow:0 0 0 3px rgba(201,130,121,.12);
+}
+
+.questionnaire-form fieldset select{
+    margin-top:2px;
+}
+
+.questionnaire-status{
+    min-height:22px;
+    margin:12px 0 0;
     font-size:14px;
-    line-height:1;
+    line-height:1.5;
+}
+
+.questionnaire-status.success-message{
+    color:var(--green);
+}
+
+.questionnaire-status.error-message{
+    color:#b33b35;
+}
+
+.guide-notes{
+    margin-top:38px;
+    padding:26px;
+    background:#f8efeb;
+    border-left:3px solid var(--rose);
+}
+
+.guide-notes h3{
+    font-family:"Playfair Display",serif;
+    font-size:24px;
+    margin-bottom:12px;
+}
+
+.guide-notes p,
+.guide-notes li{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.75;
+}
+
+.guide-notes ul{
+    padding-left:22px;
+    margin:9px 0 15px;
 }
 
 /* =========================
@@ -1225,10 +1174,6 @@ footer{
     }
 
     .about-grid{
-        grid-template-columns:1fr;
-    }
-
-    .reviews{
         grid-template-columns:1fr;
     }
 
@@ -1368,37 +1313,20 @@ footer{
         font-size:12.5px;
     }
 
-    .faq-question{
-        padding:15px 16px;
+    .questionnaire-section{
+        padding:56px 15px;
     }
 
-    .faq-question span:first-child{
-        font-size:15px;
+    .questionnaire-form{
+        padding:20px 16px;
     }
 
-    .faq-icon{
-        width:24px;
-        height:24px;
-        font-size:15px;
+    .questionnaire-grid{
+        grid-template-columns:1fr;
     }
 
-    .faq-answer p{
-        padding:0 16px 18px;
-        font-size:13px;
-    }
-
-    .faq-answer ul{
-        padding:0 16px 18px 32px;
-        font-size:13px;
-    }
-
-    .faq-flow{
-        margin:6px 16px 16px;
-    }
-
-    .faq-flow-step{
-        padding:7px 14px;
-        font-size:12px;
+    .guide-notes{
+        padding:20px 17px;
     }
 }
 </style>
@@ -1427,11 +1355,8 @@ footer{
     <li><a href="#home">Home</a></li>
     <li><a href="#shop">Shop</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#reviews">Reviews</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="javascript:void(0)" onclick="openOrderHistory()">Orders</a></li>
-    <li><a href="javascript:void(0)" onclick="openHowToUse()">How to Use</a></li>
-    <li><a href="#guide">Website Guide</a></li>
 </ul>
 
 <div class="nav-actions">
@@ -1490,6 +1415,10 @@ footer{
     Meet Saba
 </button>
 
+<a class="btn outline" href="#how-to-use">
+    How to Use
+</a>
+
 </div>
 </div>
 
@@ -1512,6 +1441,98 @@ onerror="imageFallback(this)"
 
 </div>
 
+</section>
+
+<!-- =========================
+     CUSTOMER QUESTIONS
+========================= -->
+
+<section class="questionnaire-section" id="customer-questions">
+<div class="questionnaire-wrap">
+
+<div class="heading">
+    <div class="eyebrow">YOUR EXPERIENCE</div>
+    <h2>Quick Customer Questions</h2>
+    <p>Share a little feedback to help us make your NIVA experience even better.</p>
+</div>
+
+<form class="questionnaire-form" id="customerQuestionnaire" onsubmit="submitCustomerQuestions(event)">
+<div class="questionnaire-grid">
+
+<div class="form-group">
+    <label for="questionName">1. What is your name?</label>
+    <input id="questionName" name="name" type="text" autocomplete="name" required>
+</div>
+
+<div class="form-group">
+    <label for="questionAge">2. What is your age?</label>
+    <input id="questionAge" name="age" type="number" min="1" max="120" inputmode="numeric" required>
+</div>
+
+<div class="form-group">
+    <label for="questionLocation">3. Where are you located?</label>
+    <input id="questionLocation" name="location" type="text" autocomplete="address-level2" required>
+</div>
+
+<div class="form-group">
+    <label for="questionEmail">4. What is your email address?</label>
+    <input id="questionEmail" name="email" type="email" autocomplete="email" required>
+</div>
+
+<fieldset>
+    <label for="question5">5. How did you like our website?</label>
+    <select id="question5" name="question5" required>
+        <option value="" disabled selected>Choose an answer</option>
+        <option>Love it</option><option>Like it</option><option>It's okay</option><option>Needs improvement</option>
+    </select>
+</fieldset>
+
+<fieldset>
+    <label for="question6">6. How did you like our jewellery products?</label>
+    <select id="question6" name="question6" required>
+        <option value="" disabled selected>Choose an answer</option>
+        <option>Love them</option><option>Like them</option><option>They're okay</option><option>Needs improvement</option>
+    </select>
+</fieldset>
+
+<fieldset>
+    <label for="question7">7. How easy was it to navigate the website?</label>
+    <select id="question7" name="question7" required>
+        <option value="" disabled selected>Choose an answer</option>
+        <option>Very easy</option><option>Easy</option><option>Neither easy nor difficult</option><option>Difficult</option>
+    </select>
+</fieldset>
+
+<fieldset>
+    <label for="question8">8. How would you rate the product variety?</label>
+    <select id="question8" name="question8" required>
+        <option value="" disabled selected>Choose an answer</option>
+        <option>Excellent</option><option>Good</option><option>Fair</option><option>Could be better</option>
+    </select>
+</fieldset>
+
+<fieldset>
+    <label for="question9">9. Would you like to visit our website again?</label>
+    <select id="question9" name="question9" required>
+        <option value="" disabled selected>Choose an answer</option>
+        <option>Definitely</option><option>Maybe</option><option>No</option>
+    </select>
+</fieldset>
+
+<fieldset>
+    <label for="question10">10. Would you recommend us to others?</label>
+    <select id="question10" name="question10" required>
+        <option value="" disabled selected>Choose an answer</option>
+        <option>Definitely</option><option>Maybe</option><option>No</option>
+    </select>
+</fieldset>
+
+</div>
+
+<button class="btn primary" id="questionnaireSubmit" type="submit">Submit Feedback</button>
+<p class="questionnaire-status" id="questionnaireStatus" role="status" aria-live="polite"></p>
+</form>
+</div>
 </section>
 
 <!-- =========================
@@ -1704,54 +1725,6 @@ onerror="imageFallback(this)"
 </section>
 
 <!-- =========================
-     REVIEWS
-========================= -->
-
-<section class="section" id="reviews">
-
-<div class="heading">
-
-<div class="eyebrow">
-    CUSTOMER LOVE
-</div>
-
-<h2>What People Say</h2>
-
-</div>
-
-<div class="reviews">
-
-<div class="review">
-    <div class="stars">★★★★★</div>
-    <p>
-        "The earrings are so cute and the price is amazing.
-        Perfect for college!"
-    </p>
-    <strong>— Ananya</strong>
-</div>
-
-<div class="review">
-    <div class="stars">★★★★★</div>
-    <p>
-        "I ordered the necklace and it looks really pretty.
-        The packaging was also lovely."
-    </p>
-    <strong>— Priya</strong>
-</div>
-
-<div class="review">
-    <div class="stars">★★★★★</div>
-    <p>
-        "Affordable and stylish. NIVA is definitely my new
-        favorite jewelry store."
-    </p>
-    <strong>— Riya</strong>
-</div>
-
-</div>
-</section>
-
-<!-- =========================
      NEWSLETTER
 ========================= -->
 
@@ -1783,230 +1756,39 @@ required
 </section>
 
 <!-- =========================
-     WEBSITE GUIDE (NEW MODULE)
+     HOW TO USE
 ========================= -->
 
-<section class="section" id="guide">
-
+<section class="section" id="how-to-use">
 <div class="heading">
-
-<div class="eyebrow">
-    WEBSITE GUIDE
+    <div class="eyebrow">YOUR NIVA SHOPPING GUIDE</div>
+    <h2>How to Use NIVA</h2>
+    <p>From finding a favourite piece to keeping track of an order, everything you need is right here.</p>
 </div>
 
-<h2>How This Website Works</h2>
-
-<p>
-    A behind-the-scenes look at how NIVA was built, hosted and can grow.
-</p>
-
+<div class="how-steps">
+<div class="how-step"><div class="how-step-icon">🔍</div><div class="how-step-content"><strong>1. Explore the collection</strong><p>Choose “Shop Under ₹200” in the hero, or use the Shop link in the menu. Browse the collection, search by a product name, or filter by necklaces, earrings, rings and bracelets.</p></div></div>
+<div class="how-step"><div class="how-step-icon">💎</div><div class="how-step-content"><strong>2. Check a product</strong><p>Open a product to see its image, price, rating and description. Product details help you compare styles before deciding what suits you.</p></div></div>
+<div class="how-step"><div class="how-step-icon">♡</div><div class="how-step-content"><strong>3. Save pieces or add them to your cart</strong><p>Use the heart to keep a favourite in your Wishlist. Select Add to Cart when you are ready; open the cart icon to change quantities or remove an item.</p></div></div>
+<div class="how-step"><div class="how-step-icon">🔑</div><div class="how-step-content"><strong>4. Sign in before ordering</strong><p>You can browse as a guest, but you need to log in or create an account to place an order. Use the Login / Sign Up button in the header.</p></div></div>
+<div class="how-step"><div class="how-step-icon">💳</div><div class="how-step-content"><strong>5. Enter delivery and payment details</strong><p>Proceed to checkout, provide your name, email, phone number and complete delivery address, then choose UPI, card or Cash on Delivery and submit your order.</p></div></div>
+<div class="how-step"><div class="how-step-icon">📦</div><div class="how-step-content"><strong>6. Find your order history</strong><p>Use “Orders” in the menu to review orders saved in this browser. The cart and order history are managed on this device, so use the same browser to see them again.</p></div></div>
+<div class="how-step"><div class="how-step-icon">📱</div><div class="how-step-content"><strong>7. Use NIVA on any screen</strong><p>The layout adapts to phones, tablets and computers. On a phone, open the menu button in the header to reach Shop, About, Contact and Orders.</p></div></div>
 </div>
 
-<div class="faq-list">
+<div class="guide-notes">
+    <h3>A little about how NIVA works</h3>
+    <p>NIVA is a single-page website built with HTML (content and structure), CSS (the rose-gold design and responsive layouts) and JavaScript (the product catalogue, search, filters, Wishlist, cart, forms and checkout). The page adapts to phones, tablets and computers rather than using a separate mobile site.</p>
 
-<div class="faq-item">
-<h3><button type="button" class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
-    <span>What is SEO?</span>
-    <span class="faq-icon" aria-hidden="true">+</span>
-</button></h3>
-<div class="faq-answer-wrap">
-<div class="faq-answer">
-<p>SEO (Search Engine Optimisation) is the practice of shaping a website so search engines like Google can find it, understand it and rank it fairly for relevant searches. It matters because most shoppers discover new brands by searching rather than typing in a web address directly — good SEO gives someone searching for something like rose gold earrings under ₹200 a real chance of landing here. Simple, honest steps such as clear titles, accurate descriptions and fast-loading pages all help, with no tricks required.</p>
-</div>
-</div>
-</div>
+    <h3>Products, orders and updates</h3>
+    <p>Product details are maintained in the website's catalogue, with each item described by details such as its name, price, category, image and description. Orders are sent separately to a Google Sheet through a Google Apps Script web app. The sheet is a practical, spreadsheet-style record rather than a full database; order confirmation and Order History are also kept in this browser, while the sheet gives the shop owner a separate copy. Customer questionnaire answers use their own Questions sheet and do not mix with order details.</p>
+    <p>The site is hosted on Vercel and connected to its code repository. The publishing path is code changes, a repository update, then a Vercel deployment; once connected, Vercel can rebuild and publish updates automatically. New jewellery can be added by adding its details to the website's product catalogue.</p>
 
-<div class="faq-item">
-<h3><button type="button" class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
-    <span>How was this website created?</span>
-    <span class="faq-icon" aria-hidden="true">+</span>
-</button></h3>
-<div class="faq-answer-wrap">
-<div class="faq-answer">
-<p>NIVA was built by hand with HTML, CSS and JavaScript — no frameworks, page builders or backend server involved. All three currently live together in a single HTML file: the structure, the styling and the interactive logic are written and maintained in one place, which keeps the project simple to understand and easy to deploy.</p>
+    <h3>How shoppers can discover NIVA</h3>
+    <p>Search Engine Optimisation (SEO) helps search engines understand a site and show it for relevant searches. Clear page titles and descriptions, organized headings, natural product keywords, descriptive image text and a sitemap help search engines interpret the collection. Google Search Console can be used to verify and monitor the site; search engines still need time to crawl and index updates.</p>
+    <p>Useful ways to grow the shop include sharing products on Instagram or Pinterest, using bright and accurate product photos, keeping the page quick and mobile-friendly, describing products clearly, adding new arrivals regularly and inviting happy customers to recommend NIVA. These straightforward practices help people find and understand the collection without search shortcuts.</p>
+    <p class="how-footer-note">Need help? Email <a href="mailto:saba@niva.com" style="color:var(--rose);font-weight:700">saba@niva.com</a>.</p>
 </div>
-</div>
-</div>
-
-<div class="faq-item">
-<h3><button type="button" class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
-    <span>What technologies power this website?</span>
-    <span class="faq-icon" aria-hidden="true">+</span>
-</button></h3>
-<div class="faq-answer-wrap">
-<div class="faq-answer">
-<p>Three core web technologies work together here, all in one file:</p>
-<ul>
-<li><strong>HTML</strong> — the structure and content: sections, product cards, forms and buttons.</li>
-<li><strong>CSS</strong> — the look and feel: the rose-gold palette, fonts, spacing, layout and responsive behaviour.</li>
-<li><strong>JavaScript</strong> — the behaviour: rendering products, the cart and wishlist, search and filters, form validation, and sending order data onward.</li>
-</ul>
-</div>
-</div>
-</div>
-
-<div class="faq-item">
-<h3><button type="button" class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
-    <span>Where is this website hosted?</span>
-    <span class="faq-icon" aria-hidden="true">+</span>
-</button></h3>
-<div class="faq-answer-wrap">
-<div class="faq-answer">
-<p>NIVA is deployed on Vercel, a hosting platform built for front-end projects like this one. Vercel takes the project's code, builds it and serves it from a fast global network, giving the site a live public URL with free HTTPS, and it redeploys automatically whenever the code is updated.</p>
-</div>
-</div>
-</div>
-
-<div class="faq-item">
-<h3><button type="button" class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
-    <span>What database does this website use?</span>
-    <span class="faq-icon" aria-hidden="true">+</span>
-</button></h3>
-<div class="faq-answer-wrap">
-<div class="faq-answer">
-<p>Order details are stored in Google Sheets, used here as a simple, spreadsheet-style data store. It's worth being clear that Google Sheets is not a true database like MySQL or PostgreSQL — it has no query language, indexing or relational structure — but for a small project it's a practical, visual way to collect and review orders without setting up server infrastructure.</p>
-</div>
-</div>
-</div>
-
-<div class="faq-item">
-<h3><button type="button" class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
-    <span>How is Google Sheets connected to the website?</span>
-    <span class="faq-icon" aria-hidden="true">+</span>
-</button></h3>
-<div class="faq-answer-wrap">
-<div class="faq-answer">
-<p>The connection is intentionally simple:</p>
-<ul>
-<li>A Google Sheet is set up to receive order rows.</li>
-<li>A Google Apps Script is attached to that sheet and published as a small web app with its own private URL.</li>
-<li>When someone places an order, the site's JavaScript sends the order details to that URL as a background request.</li>
-<li>The Apps Script receives the data and writes it into a new row in the sheet automatically.</li>
-</ul>
-<p>The request is sent in a "fire-and-forget" mode, so the browser never reads a response back. The exact web app URL and any credentials are kept out of this guide for security.</p>
-</div>
-</div>
-</div>
-
-<div class="faq-item">
-<h3><button type="button" class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
-    <span>How was the website published, from code to live site?</span>
-    <span class="faq-icon" aria-hidden="true">+</span>
-</button></h3>
-<div class="faq-answer-wrap">
-<div class="faq-answer">
-<p>Getting the site live follows a simple, repeatable pipeline:</p>
-<div class="faq-flow">
-<div class="faq-flow-step">Code written locally</div>
-<div class="faq-flow-arrow">↓</div>
-<div class="faq-flow-step">Pushed to a GitHub repository</div>
-<div class="faq-flow-arrow">↓</div>
-<div class="faq-flow-step">Repository connected to Vercel</div>
-<div class="faq-flow-arrow">↓</div>
-<div class="faq-flow-step">Vercel builds and deploys</div>
-<div class="faq-flow-arrow">↓</div>
-<div class="faq-flow-step">Live website, publicly online</div>
-</div>
-<p>From then on, every update just means pushing new code — Vercel handles rebuilding and republishing automatically.</p>
-</div>
-</div>
-</div>
-
-<div class="faq-item">
-<h3><button type="button" class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
-    <span>How can this website become more popular?</span>
-    <span class="faq-icon" aria-hidden="true">+</span>
-</button></h3>
-<div class="faq-answer-wrap">
-<div class="faq-answer">
-<p>Growth here comes from consistent, ethical basics rather than shortcuts:</p>
-<ul>
-<li>Solid on-page SEO (titles, descriptions, headings)</li>
-<li>Showing up in relevant Google searches</li>
-<li>Sharing products on Instagram and Pinterest</li>
-<li>Bright, high-quality product photography</li>
-<li>A mobile-friendly, fast-loading site</li>
-<li>Clear product titles and descriptions with natural keywords</li>
-<li>Tracking performance with Google Search Console</li>
-<li>Refreshing content regularly with new arrivals</li>
-<li>Encouraging happy customers to share NIVA with friends</li>
-</ul>
-</div>
-</div>
-</div>
-
-<div class="faq-item">
-<h3><button type="button" class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
-    <span>How can this website appear on Google search?</span>
-    <span class="faq-icon" aria-hidden="true">+</span>
-</button></h3>
-<div class="faq-answer-wrap">
-<div class="faq-answer">
-<p>To be found on Google, a page generally needs:</p>
-<ul>
-<li>A clear, descriptive page title</li>
-<li>A concise meta description</li>
-<li>Proper heading structure — one H1, then H2s and H3s</li>
-<li>Natural keywords used within the actual content</li>
-<li>Descriptive alt text on images</li>
-<li>A sitemap listing the site's pages</li>
-<li>Verification with Google Search Console</li>
-</ul>
-<p>Google then crawls and indexes the page over time before it starts appearing in search results.</p>
-</div>
-</div>
-</div>
-
-<div class="faq-item">
-<h3><button type="button" class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
-    <span>Is this website mobile responsive?</span>
-    <span class="faq-icon" aria-hidden="true">+</span>
-</button></h3>
-<div class="faq-answer-wrap">
-<div class="faq-answer">
-<p>Yes — the whole layout is built with responsive HTML and CSS rather than a separate mobile version. Flexible layouts, relative sizing and two breakpoints in the stylesheet reshape the page for smaller screens — collapsing the navigation into a menu, stacking the product grid, and resizing text and images — so NIVA works smoothly on phones, tablets and desktops alike.</p>
-</div>
-</div>
-</div>
-
-<div class="faq-item">
-<h3><button type="button" class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
-    <span>How can new products be added?</span>
-    <span class="faq-icon" aria-hidden="true">+</span>
-</button></h3>
-<div class="faq-answer-wrap">
-<div class="faq-answer">
-<p>Right now, every product lives directly inside the website's JavaScript as a simple list of objects, each with a name, price, category, image and description. Adding a new piece of jewelry means adding one more object to that list with the same fields as the others. Google Sheets isn't used for the product catalogue in this version of the site — it's only used to record orders once a customer checks out.</p>
-</div>
-</div>
-</div>
-
-<div class="faq-item">
-<h3><button type="button" class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
-    <span>How does data flow from the screen to storage?</span>
-    <span class="faq-icon" aria-hidden="true">+</span>
-</button></h3>
-<div class="faq-answer-wrap">
-<div class="faq-answer">
-<p>Here's the simple path data takes on this site:</p>
-<div class="faq-flow">
-<div class="faq-flow-step">User</div>
-<div class="faq-flow-arrow">↓</div>
-<div class="faq-flow-step">Website UI</div>
-<div class="faq-flow-arrow">↓</div>
-<div class="faq-flow-step">HTML + CSS + JavaScript</div>
-<div class="faq-flow-arrow">↓</div>
-<div class="faq-flow-step">Google Sheets (order records)</div>
-<div class="faq-flow-arrow">↓</div>
-<div class="faq-flow-step">Confirmation and Order History</div>
-</div>
-<p class="faq-note">In practice, the confirmation and Order History are shown straight from your own browser's storage, while Google Sheets quietly keeps a separate copy for the shop owner.</p>
-</div>
-</div>
-</div>
-
-</div>
-
 </section>
 
 <!-- =========================
@@ -2045,7 +1827,6 @@ required
 <h4>Company</h4>
 
 <a href="#about">Our Story</a>
-<a href="#reviews">Reviews</a>
 <a href="#contact">Contact</a>
 
 </div>
@@ -2488,107 +2269,6 @@ type="submit">
 </div>
 </div>
 
-<!-- =========================
-     HOW TO USE
-========================= -->
-
-<div class="modal" id="howToUseModal">
-
-<div class="modal-box">
-
-<button class="close" onclick="closeModal('howToUseModal')">
-    ×
-</button>
-
-<div class="auth-title">
-
-<div class="eyebrow">
-    GETTING STARTED
-</div>
-
-<h2>How to Use NIVA ✨</h2>
-
-<p>
-    A quick guide to shopping with us.
-</p>
-
-</div>
-
-<div class="how-steps">
-
-<div class="how-step">
-    <div class="how-step-icon">🔍</div>
-    <div class="how-step-content">
-        <strong>1. Browse and Search</strong>
-        <p>Explore the full collection, or use the search bar and category filters to find necklaces, earrings, rings and bracelets you love.</p>
-    </div>
-</div>
-
-<div class="how-step">
-    <div class="how-step-icon">💎</div>
-    <div class="how-step-content">
-        <strong>2. View Product Details</strong>
-        <p>Tap any product image for a closer look at its price, rating and description.</p>
-    </div>
-</div>
-
-<div class="how-step">
-    <div class="how-step-icon">♡</div>
-    <div class="how-step-content">
-        <strong>3. Save to Wishlist</strong>
-        <p>Tap the heart icon on a product to save it to your Wishlist for later.</p>
-    </div>
-</div>
-
-<div class="how-step">
-    <div class="how-step-icon">🛒</div>
-    <div class="how-step-content">
-        <strong>4. Add to Cart</strong>
-        <p>Click "Add to Cart" on any item you would like to buy.</p>
-    </div>
-</div>
-
-<div class="how-step">
-    <div class="how-step-icon">🧾</div>
-    <div class="how-step-content">
-        <strong>5. Manage Your Cart</strong>
-        <p>Open the cart icon anytime to update quantities or remove items.</p>
-    </div>
-</div>
-
-<div class="how-step">
-    <div class="how-step-icon">🔑</div>
-    <div class="how-step-content">
-        <strong>6. Login or Sign Up</strong>
-        <p>Create a free account, or continue as guest to browse. You will need to log in to place an order.</p>
-    </div>
-</div>
-
-<div class="how-step">
-    <div class="how-step-icon">💳</div>
-    <div class="how-step-content">
-        <strong>7. Checkout</strong>
-        <p>Enter your delivery details and choose UPI, Card, or Cash on Delivery to complete your purchase.</p>
-    </div>
-</div>
-
-<div class="how-step">
-    <div class="how-step-icon">📦</div>
-    <div class="how-step-content">
-        <strong>8. Track Your Orders</strong>
-        <p>Visit the "Orders" menu anytime to view your complete order history.</p>
-    </div>
-</div>
-
-</div>
-
-<div class="how-footer-note">
-    Happy shopping! Need help? Email <a href="mailto:saba@niva.com" style="color:var(--rose);font-weight:700">saba@niva.com</a>
-</div>
-
-</div>
-</div>
-
 <!-- TOAST -->
 
 <div class="toast" id="toast"></div>
@@ -2600,6 +2280,8 @@ type="submit">
 ========================================= */
 
 const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxo0h3DBAzRIUMMRG3UlAZCedBYBbH6WCcCDSjwe90MJfXCnbGIM-BPjOHmnCkJNnGVvQ/exec";
+
+const QUESTIONS_SHEET_URL = "https://script.google.com/macros/s/AKfycbx4eBfhAOYySsYRxdG51imu2iDt-V6TKWuCU6Irfoa5ylHsc0onMHS9uAeK-rtZ0iGc/exec";
 
 /* =========================================
    PRODUCT DATA
@@ -4085,34 +3767,77 @@ document
 });
 
 /* =========================================
-   HOW TO USE
+   CUSTOMER QUESTIONS SHEET
 ========================================= */
 
-function openHowToUse(){
+let questionsSubmitting = false;
 
-    document
-    .getElementById("howToUseModal")
-    .classList.add("show");
-}
+async function submitCustomerQuestions(event){
 
-/* =========================================
-   WEBSITE GUIDE / FAQ
-========================================= */
+    event.preventDefault();
 
-function toggleFaq(button){
+    const form = event.currentTarget;
+    const submitButton = document.getElementById("questionnaireSubmit");
+    const status = document.getElementById("questionnaireStatus");
 
-    const item =
-        button.closest(".faq-item");
+    if(questionsSubmitting){
+        return;
+    }
 
-    const expanding =
-        !item.classList.contains("open");
+    const answers = [
+        document.getElementById("questionName").value.trim(),
+        document.getElementById("questionAge").value.trim(),
+        document.getElementById("questionLocation").value.trim(),
+        document.getElementById("questionEmail").value.trim(),
+        document.getElementById("question5").value,
+        document.getElementById("question6").value,
+        document.getElementById("question7").value,
+        document.getElementById("question8").value,
+        document.getElementById("question9").value,
+        document.getElementById("question10").value
+    ];
 
-    item.classList.toggle("open");
+    status.className = "questionnaire-status";
+    status.textContent = "";
 
-    button.setAttribute(
-        "aria-expanded",
-        expanding ? "true" : "false"
-    );
+    if(!form.reportValidity() || answers.some(answer => !answer)){
+        status.classList.add("error-message");
+        status.textContent = "Please complete all 10 questions before submitting.";
+        return;
+    }
+
+    if(QUESTIONS_SHEET_URL === "PASTE_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE"){
+        status.classList.add("error-message");
+        status.textContent = "Feedback is not connected yet. Please try again later.";
+        return;
+    }
+
+    questionsSubmitting = true;
+    submitButton.disabled = true;
+    submitButton.textContent = "Submitting...";
+
+    try{
+        await fetch(QUESTIONS_SHEET_URL,{
+            method:"POST",
+            mode:"no-cors",
+            headers:{
+                "Content-Type":"text/plain;charset=utf-8"
+            },
+            body:JSON.stringify(answers)
+        });
+
+        form.reset();
+        status.classList.add("success-message");
+        status.textContent = "Thank you! Your feedback has been submitted.";
+    }catch(error){
+        console.error("Customer questions submission failed:",error);
+        status.classList.add("error-message");
+        status.textContent = "We couldn't send your feedback. Please check your connection and try again.";
+    }finally{
+        questionsSubmitting = false;
+        submitButton.disabled = false;
+        submitButton.textContent = "Submit Feedback";
+    }
 }
 
 /* =========================================

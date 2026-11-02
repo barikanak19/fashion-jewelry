@@ -387,78 +387,6 @@ header{
 }
 
 /* =========================
-   BUSINESS GUIDE
-========================= */
-
-.business-guide-section{
-    padding:76px 22px;
-    background:white;
-    border-bottom:1px solid var(--border);
-}
-
-.business-guide-wrap{
-    max-width:1100px;
-    margin:auto;
-}
-
-.business-guide-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:22px;
-}
-
-.business-guide-card{
-    padding:27px;
-    background:var(--light);
-    border:1px solid var(--border);
-    border-radius:8px;
-}
-
-.business-guide-card h3{
-    font-family:"Playfair Display",serif;
-    font-size:25px;
-    margin-bottom:16px;
-}
-
-.business-guide-card ol,
-.business-guide-card ul{
-    padding-left:22px;
-}
-
-.business-guide-card li{
-    color:var(--muted);
-    font-size:14px;
-    line-height:1.7;
-    margin-bottom:12px;
-    padding-left:3px;
-}
-
-.business-guide-card li strong{
-    color:var(--dark);
-}
-
-.sample-post,
-.monthly-activity{
-    margin-top:20px;
-    padding:17px;
-    background:white;
-    border-left:3px solid var(--rose);
-}
-
-.sample-post strong,
-.monthly-activity strong{
-    display:block;
-    margin-bottom:7px;
-}
-
-.sample-post p,
-.monthly-activity p{
-    color:var(--muted);
-    font-size:14px;
-    line-height:1.7;
-}
-
-/* =========================
    SHOP TOOLS
 ========================= */
 
@@ -1040,63 +968,125 @@ footer{
 }
 
 /* =========================
-   HOW TO USE
+   CHAPTER GUIDE
 ========================= */
 
-.how-steps{
+.chapter-nav{
     display:flex;
-    flex-direction:column;
-    gap:14px;
-    margin-top:8px;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:9px;
+    margin:0 0 30px;
 }
 
-.how-step{
-    display:flex;
-    align-items:flex-start;
-    gap:14px;
-    padding:14px;
-    background:var(--light);
+.chapter-nav a{
+    padding:8px 13px;
+    color:var(--rose-dark);
+    background:white;
     border:1px solid var(--border);
-    border-radius:8px;
-    transition:.25s;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:700;
+    transition:.2s;
 }
 
-.how-step:hover{
-    border-color:var(--rose);
-    box-shadow:0 8px 20px rgba(40,30,20,.08);
+.chapter-nav a:hover{
+    color:white;
+    background:var(--rose-dark);
+    border-color:var(--rose-dark);
 }
 
-.how-step-icon{
-    flex-shrink:0;
-    width:38px;
-    height:38px;
+.chapter-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:22px;
+}
+
+.chapter-card{
+    min-width:0;
+    overflow:hidden;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:10px;
+    box-shadow:0 8px 24px rgba(40,30,20,.05);
+    scroll-margin-top:100px;
+}
+
+.chapter-card figure{
+    height:230px;
     display:flex;
     align-items:center;
     justify-content:center;
-    background:var(--pink);
-    border-radius:50%;
-    font-size:17px;
+    padding:12px;
+    background:#f7f1ed;
 }
 
-.how-step-content strong{
+.chapter-card figure img{
     display:block;
-    margin-bottom:4px;
-    font-size:14.5px;
+    width:100%;
+    height:100%;
+    object-fit:contain;
 }
 
-.how-step-content p{
-    color:var(--muted);
-    font-size:13px;
-    line-height:1.65;
+.chapter-content{
+    padding:24px;
 }
 
-.how-footer-note{
-    text-align:center;
+.chapter-content h3{
+    font-family:"Playfair Display",serif;
+    font-size:24px;
+    line-height:1.3;
+    margin-bottom:13px;
+}
+
+.chapter-content h4{
+    font-size:15px;
+    margin:17px 0 7px;
+}
+
+.chapter-content p,
+.chapter-content li{
     color:var(--muted);
-    font-size:12.5px;
-    margin-top:22px;
-    padding-top:16px;
-    border-top:1px solid var(--border);
+    font-size:14px;
+    line-height:1.7;
+}
+
+.chapter-content ul,
+.chapter-content ol{
+    padding-left:21px;
+    margin:7px 0 13px;
+}
+
+.chapter-content li{
+    margin:0 0 6px;
+    padding-left:2px;
+}
+
+.chapter-example,
+.chapter-activity,
+.chapter-caution{
+    margin-top:15px;
+    padding:14px 16px;
+    background:#f8efeb;
+    border-left:3px solid var(--rose);
+}
+
+.chapter-example strong,
+.chapter-activity strong,
+.chapter-caution strong{
+    display:block;
+    margin-bottom:5px;
+    color:var(--dark);
+}
+
+.chapter-activity{
+    background:#f7f5ef;
+    border-left-color:var(--gold);
+}
+
+.chapter-caution{
+    background:#fff7e8;
+    border-left-color:var(--gold);
 }
 
 .questionnaire-section{
@@ -1233,7 +1223,7 @@ footer{
         grid-template-columns:1fr;
     }
 
-    .business-guide-grid{
+    .chapter-grid{
         grid-template-columns:1fr;
     }
 
@@ -1370,25 +1360,6 @@ footer{
         text-align:center;
     }
 
-    .how-step{
-        padding:11px;
-        gap:10px;
-    }
-
-    .how-step-icon{
-        width:32px;
-        height:32px;
-        font-size:15px;
-    }
-
-    .how-step-content strong{
-        font-size:13.5px;
-    }
-
-    .how-step-content p{
-        font-size:12.5px;
-    }
-
     .questionnaire-section{
         padding:56px 15px;
     }
@@ -1403,6 +1374,14 @@ footer{
 
     .guide-notes{
         padding:20px 17px;
+    }
+
+    .chapter-content{
+        padding:20px 17px;
+    }
+
+    .chapter-card figure{
+        height:210px;
     }
 }
 </style>
@@ -1429,7 +1408,7 @@ footer{
 
 <ul class="nav-links" id="navLinks">
     <li><a href="#home">Home</a></li>
-    <li><a href="#business-guide">Business Tips</a></li>
+    <li><a href="#how-to-use">How to Use</a></li>
     <li><a href="#shop">Shop</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -1521,57 +1500,6 @@ onerror="imageFallback(this)"
 </section>
 
 <!-- =========================
-     BUSINESS GUIDE
-========================= -->
-
-<section class="business-guide-section" id="business-guide">
-<div class="business-guide-wrap">
-
-<div class="heading">
-    <div class="eyebrow">A GUIDE FOR SMALL BUSINESSES</div>
-    <h2>Share Your Business Online</h2>
-    <p>Simple ways to present your products, connect with customers and learn from your results.</p>
-</div>
-
-<div class="business-guide-grid">
-
-<article class="business-guide-card">
-    <h3>Part 1: Promote your business on social media</h3>
-    <ol>
-        <li><strong>Choose a platform.</strong> Select a platform that suits your customers and products.</li>
-        <li><strong>Create a business profile.</strong> Add your business name, logo, description and contact information.</li>
-        <li><strong>Post regularly.</strong> Share product photos, demonstrations, new arrivals and useful tips.</li>
-        <li><strong>Use clear captions.</strong> Include useful product information, the price and how customers can order.</li>
-        <li><strong>Respond to customers.</strong> Answer questions politely and promptly.</li>
-        <li><strong>Track performance.</strong> Review views, reach, engagement, enquiries and sales where those metrics are available.</li>
-    </ol>
-    <div class="sample-post">
-        <strong>Sample social media post</strong>
-        <p>Everyday sparkle, made simple ✨ Discover NIVA's rose-gold favourites from ₹99. Message us to check availability and place an order. #NIVAJewelry #EverydayStyle</p>
-    </div>
-</article>
-
-<article class="business-guide-card">
-    <h3>Part 2: Improve your online presence</h3>
-    <ul>
-        <li>Improve unclear product descriptions.</li>
-        <li>Use better product photographs.</li>
-        <li>Make contact information easy to find.</li>
-        <li>Respond to enquiries quickly.</li>
-        <li>Review which posts generate genuine interest.</li>
-        <li>Ask customers for feedback and act on useful suggestions.</li>
-    </ul>
-    <div class="monthly-activity">
-        <strong>Monthly activity</strong>
-        <p>At the end of each month, record website visits, customer enquiries, orders, sales and customer suggestions, if the relevant data is available.</p>
-    </div>
-</article>
-
-</div>
-</div>
-</section>
-
-<!-- =========================
      CUSTOMER QUESTIONS
 ========================= -->
 
@@ -1580,7 +1508,7 @@ onerror="imageFallback(this)"
 
 <div class="heading">
     <div class="eyebrow">YOUR EXPERIENCE</div>
-    <h2>Part 2: 10 Website Feedback Questions</h2>
+    <h2>Website Feedback Questions</h2>
     <p>After exploring this sample jewellery website, answer these questions to help us understand whether it teaches business owners how to display their own products or services online.</p>
 </div>
 
@@ -1889,33 +1817,202 @@ required
 
 <section class="section" id="how-to-use">
 <div class="heading">
-    <div class="eyebrow">YOUR NIVA SHOPPING GUIDE</div>
-    <h2>How to Use NIVA</h2>
-    <p>From finding a favourite piece to keeping track of an order, everything you need is right here.</p>
+    <div class="eyebrow">A PRACTICAL GUIDE FOR SMALL BUSINESSES</div>
+    <h2>How to Use This Guide</h2>
+    <p>Explore these 10 chapters to learn how to present, promote and improve a small business online. The examples are illustrative; adapt them to your own business.</p>
 </div>
 
-<div class="how-steps">
-<div class="how-step"><div class="how-step-icon">🔍</div><div class="how-step-content"><strong>1. Explore the collection</strong><p>Choose “Shop Under ₹200” in the hero, or use the Shop link in the menu. Browse the collection, search by a product name, or filter by necklaces, earrings, rings and bracelets.</p></div></div>
-<div class="how-step"><div class="how-step-icon">💎</div><div class="how-step-content"><strong>2. Check a product</strong><p>Open a product to see its image, price, rating and description. Product details help you compare styles before deciding what suits you.</p></div></div>
-<div class="how-step"><div class="how-step-icon">♡</div><div class="how-step-content"><strong>3. Save pieces or add them to your cart</strong><p>Use the heart to keep a favourite in your Wishlist. Select Add to Cart when you are ready; open the cart icon to change quantities or remove an item.</p></div></div>
-<div class="how-step"><div class="how-step-icon">🔑</div><div class="how-step-content"><strong>4. Sign in before ordering</strong><p>You can browse as a guest, but you need to log in or create an account to place an order. Use the Login / Sign Up button in the header.</p></div></div>
-<div class="how-step"><div class="how-step-icon">💳</div><div class="how-step-content"><strong>5. Enter delivery and payment details</strong><p>Proceed to checkout, provide your name, email, phone number and complete delivery address, then choose UPI, card or Cash on Delivery and submit your order.</p></div></div>
-<div class="how-step"><div class="how-step-icon">📦</div><div class="how-step-content"><strong>6. Find your order history</strong><p>Use “Orders” in the menu to review orders saved in this browser. The cart and order history are managed on this device, so use the same browser to see them again.</p></div></div>
-<div class="how-step"><div class="how-step-icon">📱</div><div class="how-step-content"><strong>7. Use NIVA on any screen</strong><p>The layout adapts to phones, tablets and computers. On a phone, open the menu button in the header to reach Shop, About, Contact and Orders.</p></div></div>
-</div>
+<nav class="chapter-nav" aria-label="Guide chapters">
+    <a href="#chapter-1">Chapter 1</a>
+    <a href="#chapter-2">Chapter 2</a>
+    <a href="#chapter-3">Chapter 3</a>
+    <a href="#chapter-4">Chapter 4</a>
+    <a href="#chapter-5">Chapter 5</a>
+    <a href="#chapter-6">Chapter 6</a>
+    <a href="#chapter-7">Chapter 7</a>
+    <a href="#chapter-8">Chapter 8</a>
+    <a href="#chapter-9">Chapter 9</a>
+    <a href="#chapter-10">Chapter 10</a>
+</nav>
 
-<div class="guide-notes">
-    <h3>A little about how NIVA works</h3>
-    <p>NIVA is a single-page website built with HTML (content and structure), CSS (the rose-gold design and responsive layouts) and JavaScript (the product catalogue, search, filters, Wishlist, cart, forms and checkout). The page adapts to phones, tablets and computers rather than using a separate mobile site.</p>
+<div class="chapter-grid">
+<article class="chapter-card" id="chapter-1">
+    <figure><img src="chapter9.jpeg" alt="Digital marketing illustration for an online business" loading="lazy" decoding="async"></figure>
+    <div class="chapter-content">
+        <h3>Chapter 1: Introduction to Digital Business</h3>
+        <h4>What is a digital business?</h4>
+        <p>A digital business uses the internet and digital tools to promote, display and sell products, and to connect with customers. A small business owner can start online without opening a physical shop in a new location.</p>
+        <div class="chapter-example"><strong>Example</strong><p>A jewellery seller working from home can display earrings, prices and product photos on a website so customers can explore them online.</p></div>
+        <h4>Why is digital business important?</h4>
+        <ul>
+            <li>It helps more people discover your business.</li>
+            <li>Customers can view products without visiting your shop.</li>
+            <li>You can share product details and prices online.</li>
+            <li>You can communicate through WhatsApp or social media.</li>
+            <li>You can promote your business with a small budget.</li>
+        </ul>
+        <h4>What do you need to get started?</h4>
+        <ul><li>A smartphone or computer and an internet connection.</li><li>Product or service photos, names, prices and descriptions.</li><li>A way for customers to contact you or place orders.</li></ul>
+        <div class="chapter-activity"><strong>Activity</strong><p>Think about your business: What do you sell? Who are your customers? Why should they choose your business?</p></div>
+    </div>
+</article>
 
-    <h3>Products, orders and updates</h3>
-    <p>Product details are maintained in the website's catalogue, with each item described by details such as its name, price, category, image and description. Orders are sent separately to a Google Sheet through a Google Apps Script web app. The sheet is a practical, spreadsheet-style record rather than a full database; order confirmation and Order History are also kept in this browser, while the sheet gives the shop owner a separate copy. Customer questionnaire answers use their own Questions sheet and do not mix with order details.</p>
-    <p>The site is hosted on Vercel and connected to its code repository. The publishing path is code changes, a repository update, then a Vercel deployment; once connected, Vercel can rebuild and publish updates automatically. New jewellery can be added by adding its details to the website's product catalogue.</p>
+<article class="chapter-card" id="chapter-2">
+    <figure><img src="chapter8.jpeg" alt="Digital channels that help a business reach customers" loading="lazy" decoding="async"></figure>
+    <div class="chapter-content">
+        <h3>Chapter 2: How to Use Our Sample Jewellery Website</h3>
+        <p>The NIVA sample jewellery website demonstrates how a small business can present products online. Use it as a guide to the information your own business website could contain.</p>
+        <h4>Explore the website</h4>
+        <ul>
+            <li><strong>Home:</strong> Introduces the business.</li>
+            <li><strong>Products:</strong> Displays jewellery items.</li>
+            <li><strong>Product details:</strong> Shows a product name, price, description and image.</li>
+            <li><strong>About Us:</strong> Tells customers about the business.</li>
+            <li><strong>Contact Us:</strong> Provides contact information.</li>
+            <li><strong>How to Use:</strong> Offers guidance for business owners.</li>
+        </ul>
+        <div class="chapter-example"><strong>Sample product</strong><p><b>Traditional Gold-Plated Jhumka — ₹499</b><br>Category: Earrings<br>Beautiful traditional jhumka earrings for festive occasions. Availability: In stock.<br><em>Sample product only; the product details and price are illustrative.</em></p></div>
+        <h4>How to add your own product</h4>
+        <ol>
+            <li>Open the product management or product entry section, if available.</li>
+            <li>Enter the product name and choose a category, such as earrings, necklaces, rings or bangles.</li>
+            <li>Upload a clear product photograph, enter the selling price and write a short description.</li>
+            <li>Add quantity or stock status and order/contact details, if supported.</li>
+            <li>Review the information, then save or publish if the website supports it.</li>
+        </ol>
+        <div class="chapter-caution"><strong>Important</strong><p>This sample website does not have a working admin panel for adding products. Treat these steps as an example only; they do not save or publish products on this demo.</p></div>
+    </div>
+</article>
 
-    <h3>How shoppers can discover NIVA</h3>
-    <p>Search Engine Optimisation (SEO) helps search engines understand a site and show it for relevant searches. Clear page titles and descriptions, organized headings, natural product keywords, descriptive image text and a sitemap help search engines interpret the collection. Google Search Console can be used to verify and monitor the site; search engines still need time to crawl and index updates.</p>
-    <p>Useful ways to grow the shop include sharing products on Instagram or Pinterest, using bright and accurate product photos, keeping the page quick and mobile-friendly, describing products clearly, adding new arrivals regularly and inviting happy customers to recommend NIVA. These straightforward practices help people find and understand the collection without search shortcuts.</p>
-    <p class="how-footer-note">Need help? Email <a href="mailto:saba@niva.com" style="color:var(--rose);font-weight:700">saba@niva.com</a>.</p>
+<article class="chapter-card" id="chapter-3">
+    <figure><img src="chapter3.jpeg" alt="Illustration about growing a business with digital tools" loading="lazy" decoding="async"></figure>
+    <div class="chapter-content">
+        <h3>Chapter 3: Creating Your Business Profile</h3>
+        <p>A business profile introduces your business to potential customers. It helps them understand what you sell, where you operate and how to contact you.</p>
+        <h4>Important elements of a business profile</h4>
+        <ol>
+            <li><strong>Business name:</strong> The name customers use to identify your business.</li>
+            <li><strong>Business logo:</strong> A symbol or design representing your business.</li>
+            <li><strong>Business description:</strong> A short explanation of your products or services.</li>
+            <li><strong>Business category:</strong> Your type of business, such as jewellery, clothing, food or beauty services.</li>
+            <li><strong>Contact information:</strong> Your business phone number, email or WhatsApp contact.</li>
+            <li><strong>Location:</strong> Your shop address or service area, if relevant.</li>
+            <li><strong>Business hours:</strong> The days and times customers can contact or visit you.</li>
+        </ol>
+        <div class="chapter-example"><strong>Illustrative jewellery business profile</strong><p>Shine Jewellery · Fashion Jewellery · Affordable, stylish jewellery for everyday wear and special occasions · Palghar, Maharashtra · Business WhatsApp number · Monday to Saturday, 10 AM–7 PM.</p></div>
+        <h4>Tips for a good profile</h4>
+        <ul><li>Use a clear, professional business name and simple language.</li><li>Keep contact details correct and use your own business photos and logo.</li><li>Avoid sharing private personal information unnecessarily.</li></ul>
+        <div class="chapter-activity"><strong>Activity</strong><p>Write a short profile for your business using the details above.</p></div>
+    </div>
+</article>
+
+<article class="chapter-card" id="chapter-4">
+    <figure><img src="chapter2.jpeg" alt="Content creation illustration for product descriptions" loading="lazy" decoding="async"></figure>
+    <div class="chapter-content">
+        <h3>Chapter 4: Product Photography and Product Descriptions</h3>
+        <p>Customers cannot physically touch a product online. Good photographs and clear descriptions help them understand what they are buying.</p>
+        <h4>How to take good product photographs</h4>
+        <ul><li>Clean the product and use natural or suitable lighting.</li><li>Choose a clean background and keep the product in focus.</li><li>Take photos from different angles.</li><li>Avoid excessive filters that change the product's appearance.</li><li>Use your own photographs whenever possible.</li></ul>
+        <h4>What to include in a product description</h4>
+        <ul><li>What the product is and what material it is made from.</li><li>Its colour, size and price.</li><li>How customers can use or style it.</li><li>Whether it is in stock.</li></ul>
+        <div class="chapter-example"><strong>Example</strong><p><b>Pearl Beaded Bracelet</b><br>A pearl-style beaded bracelet for everyday wear and casual occasions.<br>Material: Specify the actual material. Price: ₹299. Availability: In stock, if confirmed. Care: Keep away from water and perfume if recommended for the actual product.</p></div>
+        <h4>Common mistakes to avoid</h4>
+        <ul><li>Blurry images, misleading descriptions or incorrect prices.</li><li>Claiming an item is gold or silver without verifying its material.</li><li>Showing unavailable products as available.</li></ul>
+        <div class="chapter-activity"><strong>Activity</strong><p>Choose one product and prepare a photograph, product name, price and two-line description.</p></div>
+    </div>
+</article>
+
+<article class="chapter-card" id="chapter-5">
+    <figure><img src="chapter8.jpeg" alt="Diagram of digital marketing channels" loading="lazy" decoding="async"></figure>
+    <div class="chapter-content">
+        <h3>Chapter 5: Introduction to Digital Marketing</h3>
+        <h4>What is digital marketing?</h4>
+        <p>Digital marketing means promoting products or services using the internet and digital platforms. A small business can start with free tools and gradually try paid advertising if needed.</p>
+        <h4>Main types of digital marketing</h4>
+        <ol>
+            <li><strong>Social media marketing:</strong> Promote through posts, stories, videos and reels on platforms such as Instagram and Facebook.</li>
+            <li><strong>WhatsApp marketing:</strong> Share catalogues, updates and offers with customers who have agreed to receive messages.</li>
+            <li><strong>Content marketing:</strong> Create useful content such as styling tips, product-care advice and gift ideas.</li>
+            <li><strong>Search engine optimization (SEO):</strong> Improve website content so search engines can understand the business and may show it in relevant results.</li>
+            <li><strong>Email marketing:</strong> Send updates, offers or newsletters to customers who have opted in.</li>
+            <li><strong>Paid advertising:</strong> Pay platforms to display advertisements to selected audiences.</li>
+        </ol>
+        <div class="chapter-example"><strong>Example</strong><p>A jewellery seller can post clear photos of new earrings, make a necklace-styling video, share the website link, post festival collection updates and invite satisfied customers to leave honest reviews.</p></div>
+        <div class="chapter-activity"><strong>Activity</strong><p>Choose two digital marketing methods for your business and explain how you would use them.</p></div>
+    </div>
+</article>
+
+<article class="chapter-card" id="chapter-6">
+    <figure><img src="chapter5.jpeg" alt="Social media marketing platforms on a smartphone" loading="lazy" decoding="async"></figure>
+    <div class="chapter-content">
+        <h3>Chapter 6: Social Media Marketing for Beginners</h3>
+        <p>Social media helps small businesses introduce products and build relationships with customers.</p>
+        <h4>How to get started</h4>
+        <ol><li>Choose a platform that suits your customers and products.</li><li>Create a business profile with your name, logo, description and contact information.</li><li>Post regularly with product photos, demonstrations, new arrivals and useful tips.</li><li>Write clear captions with product information, price and ordering details.</li><li>Respond to customers politely and promptly.</li><li>Track views, reach, engagement, enquiries and sales where those metrics are available.</li></ol>
+        <div class="chapter-example"><strong>Sample social media post</strong><p>✨ Add elegance to your everyday look! ✨ Discover our beautiful collection of earrings for casual outings and special occasions.<br>💰 Price: ₹499<br>📩 For product details and orders, contact us through our business page.<br>#Jewellery #SmallBusiness #IndianJewellery #ShopLocal<br><em>Replace the sample price and product details with your actual information.</em></p></div>
+        <h4>Important tips</h4>
+        <ul><li>Do not buy fake followers or fake reviews.</li><li>Avoid posting misleading offers.</li><li>Get permission before sharing customer photographs.</li><li>Do not send repeated promotional messages to people who have not agreed to receive them.</li></ul>
+    </div>
+</article>
+
+<article class="chapter-card" id="chapter-7">
+    <figure><img src="chapter1.jpeg" alt="Analytics chart showing business performance over time" loading="lazy" decoding="async"></figure>
+    <div class="chapter-content">
+        <h3>Chapter 7: Understanding Customers and Building Trust</h3>
+        <p>A successful digital business does more than display products. It also helps customers feel confident about buying.</p>
+        <h4>Who is your target audience?</h4>
+        <p>A target audience is the group of people most likely to buy your products or services. For a jewellery business, this could include people seeking everyday accessories, festive jewellery, wedding gifts or affordable fashion items.</p>
+        <h4>How to understand customers</h4>
+        <ul><li>Ask customers what products they prefer and what price ranges suit them.</li><li>Identify common questions and concerns.</li><li>Review genuine customer feedback.</li><li>Observe which products receive more enquiries.</li></ul>
+        <h4>How to build trust online</h4>
+        <ul><li>Display accurate product information and genuine photographs.</li><li>Explain delivery charges and timelines clearly.</li><li>Provide a clear return or exchange policy, where applicable.</li><li>Share authentic customer reviews only with permission.</li><li>Respond professionally to complaints and protect customer contact and payment information.</li></ul>
+        <div class="chapter-example"><strong>Example</strong><p>If a customer asks whether a necklace is real gold, explain its actual material instead of making a false claim.</p></div>
+        <div class="chapter-activity"><strong>Activity</strong><p>Write three questions a customer might ask before buying and prepare clear answers.</p></div>
+    </div>
+</article>
+
+<article class="chapter-card" id="chapter-8">
+    <figure><img src="chapter7.jpeg" alt="Email communication illustration for customer updates" loading="lazy" decoding="async"></figure>
+    <div class="chapter-content">
+        <h3>Chapter 8: Getting Orders, Payments, and Deliveries Online</h3>
+        <h4>Receiving and confirming orders</h4>
+        <p>Depending on the website, customers may order through a website form, WhatsApp or phone, a shopping cart and checkout, or a marketplace. Confirm the product name and quantity, final price, delivery charges, delivery address when required, estimated delivery date and payment method.</p>
+        <h4>Understanding payment options</h4>
+        <p>Businesses may accept cash on delivery, bank transfers, UPI or payments through a suitable payment gateway, depending on their setup. Never display sensitive customer payment information publicly. A sample website should use demonstration data, not real customer payment details.</p>
+        <h4>Delivery and customer service</h4>
+        <ul><li>Pack products safely and share accurate delivery information.</li><li>Keep customers informed about delays.</li><li>Provide a way to contact the business for help.</li><li>Handle returns and complaints according to the stated policy and applicable rules.</li></ul>
+        <div class="chapter-example"><strong>Example order</strong><p>One bracelet: ₹299 · Delivery: ₹50 · Total: ₹299 + ₹50 = ₹349.<br><em>This is an illustrative example.</em></p></div>
+        <div class="chapter-activity"><strong>Activity</strong><p>Create a sample order record with product name, quantity, price, delivery charge, total amount and order status.</p></div>
+    </div>
+</article>
+
+<article class="chapter-card" id="chapter-9">
+    <figure><img src="chapter6.jpeg" alt="SEO search illustration with an upward traffic graph" loading="lazy" decoding="async"></figure>
+    <div class="chapter-content">
+        <h3>Chapter 9: Basic Search Engine Optimization (SEO)</h3>
+        <p>SEO helps a website communicate clearly what a business sells, which can improve its chances of appearing in relevant search results. Results are not guaranteed.</p>
+        <h4>Important SEO terms</h4>
+        <ul><li><strong>Keyword:</strong> A phrase customers may search for, such as “affordable jewellery in Palghar.”</li><li><strong>Page title:</strong> The title that describes a webpage.</li><li><strong>Meta description:</strong> A short summary that may appear in search results.</li><li><strong>Image alt text:</strong> Text describing an image for accessibility and to help search engines understand it.</li><li><strong>Internal link:</strong> A link from one page of your website to another.</li><li><strong>Mobile-friendly website:</strong> A website that works well on smartphones.</li></ul>
+        <div class="chapter-example"><strong>Example</strong><p>Instead of the vague title “Products,” use a clearer title such as “Fashion Earrings and Necklaces | Shine Jewellery.”</p></div>
+        <h4>Basic SEO checklist</h4>
+        <ul><li>Give each important page a clear title.</li><li>Use relevant words naturally in product names and descriptions.</li><li>Add descriptive text for product images and make the website mobile-friendly.</li><li>Keep contact information accurate and avoid copying descriptions from other websites.</li></ul>
+        <div class="chapter-activity"><strong>Activity</strong><p>Write one page title and three relevant keywords for your business.</p></div>
+    </div>
+</article>
+
+<article class="chapter-card" id="chapter-10">
+    <figure><img src="chapter1.jpeg" alt="Analytics chart for measuring business results" loading="lazy" decoding="async"></figure>
+    <div class="chapter-content">
+        <h3>Chapter 10: Measuring Results and Improving Your Business</h3>
+        <p>Digital marketing is not only about posting products. Business owners should also understand what is working and what needs improvement.</p>
+        <h4>Important performance measures</h4>
+        <ul><li><strong>Website visits:</strong> How many visits the website receives.</li><li><strong>Enquiries:</strong> How many people ask about products or services.</li><li><strong>Conversion rate:</strong> The percentage of visitors who complete a desired action, such as buying.</li><li><strong>Engagement:</strong> Interactions such as comments, shares and saves.</li><li><strong>Sales:</strong> The number or value of completed purchases.</li><li><strong>Customer feedback:</strong> Opinions and suggestions that can help improve the business.</li></ul>
+        <div class="chapter-example"><strong>Example</strong><p>If 100 people visit a product page and 5 people buy, the purchase conversion rate is 5%.<br><b>Conversion rate = (Purchases ÷ Visitors) × 100</b></p></div>
+        <h4>How to improve results</h4>
+        <ul><li>Improve unclear product descriptions and use better photographs.</li><li>Make contact information easy to find and respond to enquiries quickly.</li><li>Review which posts generate genuine interest.</li><li>Ask customers for feedback and act on useful suggestions.</li></ul>
+        <div class="chapter-activity"><strong>Activity</strong><p>At the end of each month, record website visits, enquiries, orders, sales and customer suggestions, if the relevant data is available.</p></div>
+    </div>
+</article>
 </div>
 </section>
 

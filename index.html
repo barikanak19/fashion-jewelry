@@ -387,6 +387,78 @@ header{
 }
 
 /* =========================
+   BUSINESS GUIDE
+========================= */
+
+.business-guide-section{
+    padding:76px 22px;
+    background:white;
+    border-bottom:1px solid var(--border);
+}
+
+.business-guide-wrap{
+    max-width:1100px;
+    margin:auto;
+}
+
+.business-guide-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+}
+
+.business-guide-card{
+    padding:27px;
+    background:var(--light);
+    border:1px solid var(--border);
+    border-radius:8px;
+}
+
+.business-guide-card h3{
+    font-family:"Playfair Display",serif;
+    font-size:25px;
+    margin-bottom:16px;
+}
+
+.business-guide-card ol,
+.business-guide-card ul{
+    padding-left:22px;
+}
+
+.business-guide-card li{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.7;
+    margin-bottom:12px;
+    padding-left:3px;
+}
+
+.business-guide-card li strong{
+    color:var(--dark);
+}
+
+.sample-post,
+.monthly-activity{
+    margin-top:20px;
+    padding:17px;
+    background:white;
+    border-left:3px solid var(--rose);
+}
+
+.sample-post strong,
+.monthly-activity strong{
+    display:block;
+    margin-bottom:7px;
+}
+
+.sample-post p,
+.monthly-activity p{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.7;
+}
+
+/* =========================
    SHOP TOOLS
 ========================= */
 
@@ -1161,6 +1233,10 @@ footer{
         grid-template-columns:1fr;
     }
 
+    .business-guide-grid{
+        grid-template-columns:1fr;
+    }
+
     .hero-image{
         min-height:450px;
     }
@@ -1353,6 +1429,7 @@ footer{
 
 <ul class="nav-links" id="navLinks">
     <li><a href="#home">Home</a></li>
+    <li><a href="#business-guide">Business Tips</a></li>
     <li><a href="#shop">Shop</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -1444,6 +1521,57 @@ onerror="imageFallback(this)"
 </section>
 
 <!-- =========================
+     BUSINESS GUIDE
+========================= -->
+
+<section class="business-guide-section" id="business-guide">
+<div class="business-guide-wrap">
+
+<div class="heading">
+    <div class="eyebrow">A GUIDE FOR SMALL BUSINESSES</div>
+    <h2>Share Your Business Online</h2>
+    <p>Simple ways to present your products, connect with customers and learn from your results.</p>
+</div>
+
+<div class="business-guide-grid">
+
+<article class="business-guide-card">
+    <h3>Part 1: Promote your business on social media</h3>
+    <ol>
+        <li><strong>Choose a platform.</strong> Select a platform that suits your customers and products.</li>
+        <li><strong>Create a business profile.</strong> Add your business name, logo, description and contact information.</li>
+        <li><strong>Post regularly.</strong> Share product photos, demonstrations, new arrivals and useful tips.</li>
+        <li><strong>Use clear captions.</strong> Include useful product information, the price and how customers can order.</li>
+        <li><strong>Respond to customers.</strong> Answer questions politely and promptly.</li>
+        <li><strong>Track performance.</strong> Review views, reach, engagement, enquiries and sales where those metrics are available.</li>
+    </ol>
+    <div class="sample-post">
+        <strong>Sample social media post</strong>
+        <p>Everyday sparkle, made simple ✨ Discover NIVA's rose-gold favourites from ₹99. Message us to check availability and place an order. #NIVAJewelry #EverydayStyle</p>
+    </div>
+</article>
+
+<article class="business-guide-card">
+    <h3>Part 2: Improve your online presence</h3>
+    <ul>
+        <li>Improve unclear product descriptions.</li>
+        <li>Use better product photographs.</li>
+        <li>Make contact information easy to find.</li>
+        <li>Respond to enquiries quickly.</li>
+        <li>Review which posts generate genuine interest.</li>
+        <li>Ask customers for feedback and act on useful suggestions.</li>
+    </ul>
+    <div class="monthly-activity">
+        <strong>Monthly activity</strong>
+        <p>At the end of each month, record website visits, customer enquiries, orders, sales and customer suggestions, if the relevant data is available.</p>
+    </div>
+</article>
+
+</div>
+</div>
+</section>
+
+<!-- =========================
      CUSTOMER QUESTIONS
 ========================= -->
 
@@ -1452,8 +1580,8 @@ onerror="imageFallback(this)"
 
 <div class="heading">
     <div class="eyebrow">YOUR EXPERIENCE</div>
-    <h2>Quick Customer Questions</h2>
-    <p>Share a little feedback to help us make your NIVA experience even better.</p>
+    <h2>Part 2: 10 Website Feedback Questions</h2>
+    <p>After exploring this sample jewellery website, answer these questions to help us understand whether it teaches business owners how to display their own products or services online.</p>
 </div>
 
 <form class="questionnaire-form" id="customerQuestionnaire" onsubmit="submitCustomerQuestions(event)">
